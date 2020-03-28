@@ -10,7 +10,8 @@ module.exports = {
       "customId",
       "preventDuplicate",
       "delayToast",
-      "limitToast"
+      "limitToast",
+      "controlledProgress"
     ],
     Features: ["mdx"]
   }
