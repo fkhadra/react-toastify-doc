@@ -1,6 +1,6 @@
 module.exports = {
   someSidebar: {
-    ["Getting Started"]: ["installation", "doc1", "doc2", "doc3"],
+    ["Getting Started"]: ["installation"],
     Usages: [
       "toastContainer",
       "positioningToast",
@@ -11,7 +11,10 @@ module.exports = {
       "preventDuplicate",
       "delayToast",
       "limitToast",
-      "controlledProgress"
+      "controlledProgress",
+      "render-what-you-want",
+      "update-toast",
+      "define-callback"
     ],
     Features: ["mdx"]
   }
