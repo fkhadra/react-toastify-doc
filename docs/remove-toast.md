@@ -4,8 +4,11 @@ title: Remove toast programmatically
 sidebar_label: Remove toast programmatically
 ---
 
-An id is returned each time you display a toast, use it to remove a given toast programmatically by calling ```toast.dismiss(id)```
+An id is returned each time you display a toast, use it to remove a given toast programmatically by calling `toast.dismiss(id)`
 
+:::info Info
+If you call `toast.dismiss` without argument, all the displayed toasts will be removed.
+:::
 
 ```jsx
   import React, { Component } from 'react';
@@ -31,9 +34,3 @@ An id is returned each time you display a toast, use it to remove a given toast 
     }
   }
 ```
-
-## Remove all displayed notifications
-
-
-
-
