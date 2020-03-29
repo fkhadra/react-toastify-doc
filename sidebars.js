@@ -18,7 +18,8 @@ module.exports = {
       "listen-for-changes",
       "use-a-custom-close-button-or-remove-it",
       "add-an-undo-action-to-a-toast",
-      "replace-default-transition"
+      "replace-default-transition",
+      "custom-transition"
     ],
     Features: ["mdx"]
   }
