@@ -1,31 +1,27 @@
 module.exports = {
-  title: 'My Site',
-  tagline: 'The tagline of my site',
-  url: 'https://your-docusaurus-test-site.com',
+  title: 'React-Toastify',
+  tagline: 'React notification made easy !',
+  url: 'https://fkhadra.github.io/react-toastify/',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'fkhadra', // Usually your GitHub org/user name.
+  projectName: 'react-toastify', // Usually your repo name.
   themeConfig: {
     prism: {
       theme: require('prism-react-renderer/themes/dracula'),
     },
     navbar: {
-      title: 'My Site',
-      logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
-      },
+      title: 'React-Toastify',
       links: [
         {
-          to: 'docs/doc1',
+          to: 'docs/installation',
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'left',
         },
         {to: 'blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/fkhadra/react-toastify',
           label: 'GitHub',
           position: 'right',
         },
@@ -78,7 +74,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} React-Toastify, Inc. Built with Docusaurus.`,
     },
   },
   presets: [
