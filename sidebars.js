@@ -19,7 +19,8 @@ module.exports = {
       "use-a-custom-close-button-or-remove-it",
       "add-an-undo-action-to-a-toast",
       "replace-default-transition",
-      "custom-transition"
+      "custom-transition",
+      "drag-to-remove"
     ],
     Features: ["mdx"]
   }
