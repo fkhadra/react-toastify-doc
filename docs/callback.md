@@ -17,8 +17,8 @@ function Example(){
 
   const notify = () => {
     toast("Hello there", {
-      onOpen: () => window.alert('I counted to infinity once then..'),
-      onClose: () => window.alert('I counted to infinity twice')
+      onOpen: () => window.alert('Called when I open'),
+      onClose: () => window.alert('Called when I close')
     });
   }
 
