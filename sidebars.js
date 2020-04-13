@@ -23,10 +23,12 @@ module.exports = {
       "custom-transition",
       "drag-to-remove",
       "enable-right-to-left-support",
-      "accessibility"
+      "accessibility",
+      "lazy-container-and-multi-container",
+      "how-to-style"
     ],
-    Advanced: [
-      "lazy-container-and-multi-container"
+    Style: [
+      
     ],
     Features: ["mdx"]
   }
