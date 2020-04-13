@@ -24,20 +24,18 @@ const App = () => (
 import React from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 
-class App extends Component {
-  closeAfter15 = () => toast("YOLO", { autoClose: 15000 });
+function Example() {
+  const closeAfter15 = () => toast("Will close after 15s", { autoClose: 15000 });
 
-  closeAfter7 = () => toast("7 Kingdoms", { autoClose: 7000 });
+  const closeAfter7 = () => toast("Will close after 7s", { autoClose: 7000 });
 
-  render(){
-    return (
-      <div>
-        <button onClick={this.closeAfter15}>Close after 15 seconds</button>
-        <button onClick={this.closeAfter7}>Close after 7 seconds</button>
-        <ToastContainer autoClose={8000} />
-      </div>
-    );
-  }
+  return (
+    <div>
+      <button onClick={closeAfter15}>Close after 15 seconds</button>
+      <button onClick={closeAfter7}>Close after 7 seconds</button>
+      <ToastContainer autoClose={8000} />
+    </div>
+  );
 }
 ```
 
