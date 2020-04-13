@@ -23,8 +23,8 @@ function Example() {
 
   return (
     <div>
-      <button onClick={this.notify}>Notify</button>
-      <button onClick={this.update}>Update</button>
+      <button onClick={notify}>Notify</button>
+      <button onClick={update}>Update</button>
     </div>
   );
 }
@@ -84,7 +84,7 @@ By default, when you update a toast, there is no transition applied. If you want
 
 ```jsx
 // with css
-toast.update(this.toastId, {
+toast.update(toastId, {
   render: "New Content",
   type: toast.TYPE.INFO,
   //Here the magic
@@ -92,7 +92,7 @@ toast.update(this.toastId, {
 })
 
 // with transition
-toast.update(this.toastId, {
+toast.update(toastId, {
   render: "New Content",
   type: toast.TYPE.INFO,
   //Here the magic
@@ -106,27 +106,29 @@ If you want to inherit props from the `ToastContainer`, you can reset an option 
 It's particularly useful when you remove the `closeButton` from a toast and you want it back during the update.
 
 ```jsx
-class Update extends Component {
-  toastId = null;
+function Example(){
+  const toastId = React.useRef(null);
 
-  notify = () => this.toastId = toast("Hello", {
+  const notify = () => {
+    toastId.current = toast("Hello", {
       autoClose: false,
       closeButton: false // Remove the closeButton
     });
+  }
 
-  update = () => toast.update(this.toastId, {
+  const update = () => {
+    toast.update(toastId.current, {
       type: toast.TYPE.INFO,
       autoClose: 5000,
       closeButton: null // The closeButton defined on ToastContainer will be used
     });
-
-  render(){
-      return (
-        <div>
-          <button onClick={this.notify}>Notify</button>
-          <button onClick={this.update}>Update</button>
-        </div>
-      )
   }
+
+  return (
+    <div>
+      <button onClick={notify}>Notify</button>
+      <button onClick={update}>Update</button>
+    </div>
+  );
 }
 ```
