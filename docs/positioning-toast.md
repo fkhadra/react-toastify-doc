@@ -1,5 +1,5 @@
 ---
-id: positioningToast
+id: positioning-toast
 title: Positioning toast
 sidebar_label: Positioning toast
 ---

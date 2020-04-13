@@ -1,5 +1,5 @@
 ---
-id: 'pauseOnFocusLoss'
+id: 'pause-on-focus-loss'
 title: 'Pause toast timer when the window loses focus'
 sidebar_label: 'Pause toast timer when the window loses focus'
 ---

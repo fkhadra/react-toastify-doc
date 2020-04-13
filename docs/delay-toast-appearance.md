@@ -1,5 +1,5 @@
 ---
-id: 'delayToast'
+id: 'delay-toast-appearance'
 title: 'Delay notification appearance'
 sidebar_label: 'Delay notification appearance'
 ---

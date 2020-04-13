@@ -1,5 +1,5 @@
 ---
-id: 'controlledProgress'
+id: 'use-a-controlled-progress-bar'
 title: 'Use a controlled progress bar'
 sidebar_label: 'Use a controlled progress bar'
 ---

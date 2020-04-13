@@ -1,5 +1,5 @@
 ---
-id: 'customId'
+id: 'use-a-custom-id'
 title: 'Use a custom id'
 sidebar_label: 'Use a custom id'
 ---

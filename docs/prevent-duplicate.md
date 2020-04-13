@@ -1,5 +1,5 @@
 ---
-id: 'preventDuplicate'
+id: 'prevent-duplicate'
 title: 'Prevent duplicate'
 sidebar_label: 'Prevent duplicate'
 ---

@@ -1,5 +1,5 @@
 ---
-id: removeToast
+id: remove-toast
 title: Remove toast programmatically 
 sidebar_label: Remove toast programmatically
 ---

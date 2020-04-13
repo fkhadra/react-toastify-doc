@@ -1,5 +1,5 @@
 ---
-id: 'limitToast'
+id: 'limit-the-number-of-toast-displayed'
 title: 'Limit the number of toast displayed'
 sidebar_label: 'Limit the number of toast displayed'
 ---
