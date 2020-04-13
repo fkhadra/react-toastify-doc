@@ -11,11 +11,11 @@ The following values are allowed: **top-right, top-center, top-left, bottom-righ
 For convenience, `toast` exposes a POSITION property to avoid any typos.
 
 ```jsx
-  import React, { Component } from 'react';
+  import React from 'react';
   import { toast } from 'react-toastify';
 
-  class Position extends Component {
-    notify = () => {
+  function Example() {
+    const notify = () => {
       toast("Default Notification !");
 
       toast.success("Success Notification !", {
@@ -40,8 +40,6 @@ For convenience, `toast` exposes a POSITION property to avoid any typos.
       });
     };
 
-    render(){
-      return <button onClick={this.notify}>Notify</button>;
-    }
+    return <button onClick={notify}>Notify</button>;
   }
 ```
