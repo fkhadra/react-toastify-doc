@@ -21,7 +21,9 @@ module.exports = {
       "use-react-toastify-with-redux",
       "replace-default-transition",
       "custom-transition",
-      "drag-to-remove"
+      "drag-to-remove",
+      "enable-right-to-left-support",
+      "accessibility"
     ],
     Advanced: [
       "lazy-container-and-multi-container"
