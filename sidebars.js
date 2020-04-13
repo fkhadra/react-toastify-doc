@@ -26,6 +26,6 @@ module.exports = {
       "lazy-container-and-multi-container",
       "how-to-style"
     ],
-    API: ["api/toast-container", "api/toast", "api/css-transition"]
+    ['API Reference']: ["api/toast-container", "api/toast", "api/css-transition"]
   }
 };
