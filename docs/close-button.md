@@ -72,7 +72,7 @@ Sometimes you don't want to display a close button. It can be removed globally o
   if you removed it globally, you can still choose to display it for a specific toast  
   ```jsx
   toast("hello", {
-    closeButton: true // or <MyCustomCloseButton />
+    closeButton: true // or MyCustomCloseButton
   })
 ```
 :::
