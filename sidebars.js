@@ -1,8 +1,7 @@
 module.exports = {
   someSidebar: {
-    ["Getting Started"]: ["introduction","installation"],
+    ["Getting Started"]: ["introduction","installation", "the-gist-of-react-toastify"],
     Usages: [
-      "the-gist-of-react-toastify",
       "positioning-toast",
       "autoClose",
       "render-what-you-want",
@@ -27,9 +26,6 @@ module.exports = {
       "lazy-container-and-multi-container",
       "how-to-style"
     ],
-    Style: [
-      
-    ],
-    Features: ["mdx"]
+    API: ["api/toast-container", "api/toast", "api/css-transition"]
   }
 };

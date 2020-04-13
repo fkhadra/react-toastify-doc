@@ -13,67 +13,55 @@ module.exports = {
     navbar: {
       title: 'React-Toastify',
       links: [
-        {
-          to: 'docs/installation',
-          activeBasePath: 'docs',
-          label: 'Docs',
-          position: 'left',
-        },
-        {to: 'blog', label: 'Blog', position: 'left'},
-        {
-          href: 'https://github.com/fkhadra/react-toastify',
-          label: 'GitHub',
-          position: 'right',
-        },
       ],
     },
     footer: {
       style: 'dark',
-      links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Style Guide',
-              to: 'docs/doc1',
-            },
-            {
-              label: 'Second Doc',
-              to: 'docs/doc2',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-          ],
-        },
-        {
-          title: 'Social',
-          items: [
-            {
-              label: 'Blog',
-              to: 'blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
-            },
-          ],
-        },
-      ],
+      // links: [
+      //   {
+      //     title: 'Docs',
+      //     items: [
+      //       {
+      //         label: 'Style Guide',
+      //         to: 'docs/doc1',
+      //       },
+      //       {
+      //         label: 'Second Doc',
+      //         to: 'docs/doc2',
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     title: 'Community',
+      //     items: [
+      //       {
+      //         label: 'Stack Overflow',
+      //         href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+      //       },
+      //       {
+      //         label: 'Discord',
+      //         href: 'https://discordapp.com/invite/docusaurus',
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     title: 'Social',
+      //     items: [
+      //       {
+      //         label: 'Blog',
+      //         to: 'blog',
+      //       },
+      //       {
+      //         label: 'GitHub',
+      //         href: 'https://github.com/facebook/docusaurus',
+      //       },
+      //       {
+      //         label: 'Twitter',
+      //         href: 'https://twitter.com/docusaurus',
+      //       },
+      //     ],
+      //   },
+      // ],
       copyright: `Copyright © ${new Date().getFullYear()} Fadi Khadra`,
     },
   },

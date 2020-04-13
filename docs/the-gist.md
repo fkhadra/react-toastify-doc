@@ -4,10 +4,6 @@ title: The gist of react-toastify
 sidebar_label: The gist of react-toastify
 ---
 
-## One ToastContainer to render them
-
-The toasts inherit ToastContainer's props. **Props defined on toast supersede ToastContainer's props.**
-
 ```jsx
   import React, { Component } from 'react';
   import { ToastContainer, toast } from 'react-toastify';
