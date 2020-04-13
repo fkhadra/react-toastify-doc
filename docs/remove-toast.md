@@ -11,26 +11,24 @@ If you call `toast.dismiss` without argument, all the displayed toasts will be r
 :::
 
 ```jsx
-  import React, { Component } from 'react';
-  import { toast } from 'react-toastify';
+import React from 'react';
+import { toast } from 'react-toastify';
 
-  class Example extends Component {
-    toastId = null;
+function Example(){
+  const toastId = React.useRef(null);
 
-    notify = () => this.toastId = toast("Lorem ipsum dolor");
+  const notify = () => toastId.current = toast("Lorem ipsum dolor");
 
-    dismiss = () =>  toast.dismiss(this.toastId);
+  const dismiss = () =>  toast.dismiss(toastId.current);
 
-    dismissAll = () =>  toast.dismiss();
+  const dismissAll = () =>  toast.dismiss();
 
-    render(){
-      return (
-        <div>
-          <button onClick={this.notify}>Notify</button>
-          <button onClick={this.dismiss}>Dismiss</button>
-          <button onClick={this.dismissAll}>Dismiss All</button>
-        </div>
-      );
-    }
-  }
+  return (
+    <div>
+      <button onClick={notify}>Notify</button>
+      <button onClick={dismiss}>Dismiss</button>
+      <button onClick={dismissAll}>Dismiss All</button>
+    </div>
+  );
+}
 ```
