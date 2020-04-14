@@ -1,22 +1,21 @@
 module.exports = {
-  title: 'React-Toastify',
-  tagline: 'React notification made easy !',
-  url: 'https://fkhadra.github.io/react-toastify/',
-  baseUrl: '/',
-  favicon: 'img/favicon.ico',
-  organizationName: 'fkhadra', // Usually your GitHub org/user name.
-  projectName: 'react-toastify', // Usually your repo name.
+  title: "React-Toastify",
+  tagline: "React notification made easy !",
+  url: "https://fkhadra.github.io/react-toastify/",
+  baseUrl: "/",
+  favicon: "img/favicon.ico",
+  organizationName: "fkhadra", // Usually your GitHub org/user name.
+  projectName: "react-toastify", // Usually your repo name.
   themeConfig: {
     prism: {
-      theme: require('prism-react-renderer/themes/dracula'),
+      theme: require("prism-react-renderer/themes/dracula"),
     },
     navbar: {
-      title: 'React-Toastify',
-      links: [
-      ],
+      title: "React-Toastify",
+      links: [],
     },
     footer: {
-      style: 'dark',
+      style: "dark",
       // links: [
       //   {
       //     title: 'Docs',
@@ -67,16 +66,21 @@ module.exports = {
   },
   presets: [
     [
-      '@docusaurus/preset-classic',
+      "@docusaurus/preset-classic",
       {
         docs: {
-          routeBasePath: '', // Set to empty string.
-          sidebarPath: require.resolve('./sidebars.js'),
+          routeBasePath: "", // Set to empty string.
+          sidebarPath: require.resolve("./sidebars.js"),
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
+            "https://github.com/facebook/docusaurus/edit/master/website/",
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: [
+            require.resolve("./src/css/custom.css"),
+            require.resolve(
+              "./node_modules/react-toastify/dist/ReactToastify.min.css"
+            ),
+          ],
         },
       },
     ],
