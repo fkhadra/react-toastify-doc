@@ -1,22 +1,24 @@
-import React from 'react';
-import { ToastContainerProps } from 'react-toastify';
+import React from "react";
 
-function getProp<L , R>(prop: L, value: R) {
+import { PlaygroundState } from "./App";
+
+import { Code, Element } from "./Code.styles";
+
+function getProp<L, R>(prop: L, value: R) {
   return value ? (
     <div>
-      <span className="code__props">{prop}</span>
+      <Element kind={1}>{prop}</Element>
     </div>
   ) : (
     <div>
-      <span className="code__props">{prop}</span>
+      <Element kind={1}>{prop}</Element>
       {`={false}`}
     </div>
   );
 }
 
-interface ContainerCodeProps extends Partial<ToastContainerProps> {
+interface ContainerCodeProps extends PlaygroundState {
   isDefaultProps: boolean;
-  disableAutoClose: boolean;
 }
 
 export const ContainerCode: React.FC<ContainerCodeProps> = ({
@@ -30,30 +32,30 @@ export const ContainerCode: React.FC<ContainerCodeProps> = ({
   rtl,
   pauseOnFocusLoss,
   isDefaultProps,
-  draggable
+  draggable,
 }) => (
   <div>
     <h3>Toast Container</h3>
-    <div className="code">
+    <Code>
       <div>
         <span>{`<`}</span>
-        <span className="code__component">ToastContainer</span>
+        <Element kind={0}>ToastContainer</Element>
       </div>
       <div>
-        <span className="code__props">position</span>
+        <Element kind={1}>position</Element>
         {`="${position}"`}
       </div>
       <div>
-        <span className="code__props">autoClose</span>
+        <Element kind={1}>autoClose</Element>
         {`={${disableAutoClose ? false : autoClose}}`}
       </div>
-      {!disableAutoClose ? getProp('hideProgressBar', hideProgressBar) : ''}
-      {getProp('newestOnTop', newestOnTop)}
-      {getProp('closeOnClick', closeOnClick)}
-      {getProp('rtl', rtl)}
-      {getProp('pauseOnFocusLoss', pauseOnFocusLoss)}
-      {getProp('draggable', draggable)}
-      {!disableAutoClose ? getProp('pauseOnHover', pauseOnHover) : ''}
+      {!disableAutoClose ? getProp("hideProgressBar", hideProgressBar) : ""}
+      {getProp("newestOnTop", newestOnTop)}
+      {getProp("closeOnClick", closeOnClick)}
+      {getProp("rtl", rtl)}
+      {getProp("pauseOnFocusLoss", pauseOnFocusLoss)}
+      {getProp("draggable", draggable)}
+      {!disableAutoClose ? getProp("pauseOnHover", pauseOnHover) : ""}
       <div>
         <span>{`/>`}</span>
       </div>
@@ -61,10 +63,10 @@ export const ContainerCode: React.FC<ContainerCodeProps> = ({
         <div>
           <div>{`{/* Same as */}`}</div>
           <span>{`<`}</span>
-          <span className="code__component">ToastContainer</span>
+          <Element kind={0}>ToastContainer</Element>
           <span> /></span>
         </div>
       )}
-    </div>
+    </Code>
   </div>
 );

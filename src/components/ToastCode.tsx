@@ -1,19 +1,21 @@
-import React from 'react';
-import { PlaygroundState } from './App';
+import React from "react";
+import { PlaygroundState } from "./App";
+
+import { Code, Element } from "./Code.styles";
 
 function getType(type: string) {
   switch (type) {
-    case 'default':
+    case "default":
     default:
-      return 'toast';
-    case 'success':
-      return 'toast.success';
-    case 'error':
-      return 'toast.error';
-    case 'info':
-      return 'toast.info';
-    case 'warning':
-      return 'toast.warn';
+      return "toast";
+    case "success":
+      return "toast.success";
+    case "error":
+      return "toast.error";
+    case "info":
+      return "toast.info";
+    case "warning":
+      return "toast.warn";
   }
 }
 
@@ -26,46 +28,46 @@ export const ToastCode: React.FC<PlaygroundState> = ({
   pauseOnHover,
   type,
   draggable,
-  progress
+  progress,
 }) => (
   <div>
     <h3>Toast Emitter</h3>
-    <div className="code">
+    <Code>
       <div>
-        <span className="code__component">{getType(type)}</span>
+        <Element kind={0}>{getType(type)}</Element>
         {`('🦄 Wow so easy!', { `}
       </div>
       <div>
-        <span className="code__props">position</span>
+        <Element kind={1}>position</Element>
         {`: "${position}"`},
       </div>
       <div>
-        <span className="code__props">autoClose</span>
+        <Element kind={1}>autoClose</Element>
         {`: ${disableAutoClose ? false : autoClose}`},
       </div>
       <div>
-        <span className="code__props">hideProgressBar</span>
-        {`: ${hideProgressBar ? 'true' : 'false'}`},
+        <Element kind={1}>hideProgressBar</Element>
+        {`: ${hideProgressBar ? "true" : "false"}`},
       </div>
       <div>
-        <span className="code__props">closeOnClick</span>
-        {`: ${closeOnClick ? 'true' : 'false'}`},
+        <Element kind={1}>closeOnClick</Element>
+        {`: ${closeOnClick ? "true" : "false"}`},
       </div>
       <div>
-        <span className="code__props">pauseOnHover</span>
-        {`: ${pauseOnHover ? 'true' : 'false'}`},
+        <Element kind={1}>pauseOnHover</Element>
+        {`: ${pauseOnHover ? "true" : "false"}`},
       </div>
       <div>
-        <span className="code__props">draggable</span>
-        {`: ${draggable ? 'true' : 'false'}`},
+        <Element kind={1}>draggable</Element>
+        {`: ${draggable ? "true" : "false"}`},
       </div>
       {!Number.isNaN(progress) && (
         <div>
-          <span className="code__props">progress</span>
+          <Element kind={1}>progress</Element>
           {`: ${progress}`},
         </div>
       )}
       <div>{`});`}</div>
-    </div>
+    </Code>
   </div>
 );
