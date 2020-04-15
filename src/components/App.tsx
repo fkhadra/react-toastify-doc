@@ -7,6 +7,8 @@ import { ToastContainer, toast, Id } from "react-toastify";
 import { Options } from "./Options";
 import { Actions } from "./Actions";
 
+import styled from "styled-components";
+
 import { containerOptions, transitions } from "../utils";
 
 function getDefaultState() {
@@ -93,43 +95,53 @@ export function App() {
   };
 
   return (
+    <>
     <main>
-      <div>
-        <section>
-          <h3>Position</h3>
-          <RadioList
-            options={toast.POSITION}
-            name="position"
-            checked={state.position}
-            onChange={handleInput}
-          />
-          <h3>Type</h3>
-          <RadioList
-            options={toast.TYPE}
-            name="type"
-            checked={state.type}
-            onChange={handleInput}
-          />
-          <Options
-            {...state}
-            handleAutoCloseDelay={handleAutoCloseDelay}
-            handleInput={handleInput}
-          />
-          <ContainerCode {...state} isDefaultProps={isDefaultProps()} />
-          <ToastCode {...state} />
-        </section>
-      </div>
-      <Actions 
-        clearAll={clearAll}
-        handleReset={handleReset}
-        showToast={showToast}
-        updateToast={updateToast}
-      />
-      <ToastContainer
-        {...state}
-        transition={transitions[state.transition]}
-        autoClose={state.disableAutoClose ? false : state.autoClose}
-      />
+      <section>
+        <h3>Position</h3>
+        <RadioList
+          options={toast.POSITION}
+          name="position"
+          checked={state.position}
+          onChange={handleInput}
+        />
+        <h3>Type</h3>
+        <RadioList
+          options={toast.TYPE}
+          name="type"
+          checked={state.type}
+          onChange={handleInput}
+        />
+        
+      </section>
+      <section>
+        <ContainerCode {...state} isDefaultProps={isDefaultProps()} />
+        <ToastCode {...state} />
+      </section>
+      
     </main>
+    <section>
+    <Options
+          {...state}
+          handleAutoCloseDelay={handleAutoCloseDelay}
+          handleInput={handleInput}
+        />
+
+        <ul>{renderFlags()}</ul>
+    </section>
+    <section>
+        <Actions
+          clearAll={clearAll}
+          handleReset={handleReset}
+          showToast={showToast}
+          updateToast={updateToast}
+        />
+        <ToastContainer
+          {...state}
+          transition={transitions[state.transition]}
+          autoClose={state.disableAutoClose ? false : state.autoClose}
+        />
+      </section>
+    </>
   );
 }
