@@ -5,6 +5,7 @@ import { ContainerCode } from "./ContainerCode";
 import { ToastCode } from "./ToastCode";
 import { ToastContainer, toast, Id } from "react-toastify";
 import { Options } from "./Options";
+import { Actions } from "./Actions";
 
 import { containerOptions, transitions } from "../utils";
 
@@ -118,26 +119,12 @@ export function App() {
           <ToastCode {...state} />
         </section>
       </div>
-      <ul className="container__actions">
-        <li>
-          <button onClick={showToast}>Show Toast</button>
-        </li>
-        <li>
-          <button className="btn" onClick={updateToast}>
-            Update
-          </button>
-        </li>
-        <li>
-          <button className="btn bg-red" onClick={clearAll}>
-            Clear All
-          </button>
-        </li>
-        <li>
-          <button className="btn bg-blue" onClick={handleReset}>
-            Reset
-          </button>
-        </li>
-      </ul>
+      <Actions 
+        clearAll={clearAll}
+        handleReset={handleReset}
+        showToast={showToast}
+        updateToast={updateToast}
+      />
       <ToastContainer
         {...state}
         transition={transitions[state.transition]}
