@@ -6,7 +6,6 @@ import { ToastCode } from "./ToastCode";
 import { ToastContainer, toast, Id } from "react-toastify";
 import { Options } from "./Options";
 import { Actions } from "./Actions";
-
 import styled from "styled-components";
 
 import { containerOptions, transitions } from "../utils";
@@ -23,6 +22,17 @@ function getDefaultState() {
 }
 
 export type PlaygroundState = ReturnType<typeof getDefaultState>;
+
+const FlexSection = styled.section`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: "row";
+  margin-bottom: 1rem;
+`;
+
+const Main = styled.main`
+  margin-top: 1rem;
+`;
 
 export function App() {
   const [state, setState] = useState(() => getDefaultState());
@@ -81,23 +91,13 @@ export function App() {
       [e.target.name]: !state[e.target.name],
     });
 
-  const renderFlags = () => {
-    return containerOptions.map(({ id, label }) => (
-      <li key={id}>
-        <Checkbox
-          id={id}
-          label={label}
-          onChange={toggleCheckbox}
-          checked={state[id]}
-        />
-      </li>
-    ));
-  };
-
   return (
-    <>
-    <main>
-      <section>
+    <Main>
+      <FlexSection>
+        <ContainerCode {...state} isDefaultProps={isDefaultProps()} />
+        <ToastCode {...state} />
+      </FlexSection>
+      <div>
         <h3>Position</h3>
         <RadioList
           options={toast.POSITION}
@@ -105,6 +105,8 @@ export function App() {
           checked={state.position}
           onChange={handleInput}
         />
+      </div>
+      <div>
         <h3>Type</h3>
         <RadioList
           options={toast.TYPE}
@@ -112,36 +114,24 @@ export function App() {
           checked={state.type}
           onChange={handleInput}
         />
-        
-      </section>
-      <section>
-        <ContainerCode {...state} isDefaultProps={isDefaultProps()} />
-        <ToastCode {...state} />
-      </section>
-      
-    </main>
-    <section>
-    <Options
-          {...state}
-          handleAutoCloseDelay={handleAutoCloseDelay}
-          handleInput={handleInput}
-        />
-
-        <ul>{renderFlags()}</ul>
-    </section>
-    <section>
-        <Actions
-          clearAll={clearAll}
-          handleReset={handleReset}
-          showToast={showToast}
-          updateToast={updateToast}
-        />
-        <ToastContainer
-          {...state}
-          transition={transitions[state.transition]}
-          autoClose={state.disableAutoClose ? false : state.autoClose}
-        />
-      </section>
-    </>
+      </div>
+      <Options
+        {...state}
+        handleAutoCloseDelay={handleAutoCloseDelay}
+        handleInput={handleInput}
+        handleCheckbox={toggleCheckbox}
+      />
+      <Actions
+        clearAll={clearAll}
+        handleReset={handleReset}
+        showToast={showToast}
+        updateToast={updateToast}
+      />
+      <ToastContainer
+        {...state}
+        transition={transitions[state.transition]}
+        autoClose={state.disableAutoClose ? false : state.autoClose}
+      />
+    </Main>
   );
 }

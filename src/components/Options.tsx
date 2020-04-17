@@ -1,14 +1,28 @@
 import React from "react";
+import styled from "styled-components";
 
 import { PlaygroundState } from "./App";
-import { transitions } from "../utils";
+import { transitions, containerOptions } from "../utils";
+import { Checkbox } from "./Checkbox";
 
 interface OptionsProps extends PlaygroundState {
   handleInput: (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => void;
   handleAutoCloseDelay: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleCheckbox: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
+
+const Container = styled.div`
+  width: 100%;
+  margin-bottom: 1rem;
+`;
+
+const OptionsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+`
 
 export const Options: React.FC<OptionsProps> = ({
   autoClose,
@@ -18,9 +32,40 @@ export const Options: React.FC<OptionsProps> = ({
   transition,
   limit,
   progress,
+  handleCheckbox,
+  ...rest
 }) => {
+  const options = {
+    left: [],
+    right: [],
+  };
+
+  containerOptions.forEach(({ id, label }, index) => {
+    index % 2 === 1
+      ? options.left.push(
+          <li key={id}>
+            <Checkbox
+              id={id}
+              label={label}
+              onChange={handleCheckbox}
+              checked={rest[id]}
+            />
+          </li>
+        )
+      : options.right.push(
+          <li key={id}>
+            <Checkbox
+              id={id}
+              label={label}
+              onChange={handleCheckbox}
+              checked={rest[id]}
+            />
+          </li>
+        );
+  });
+
   return (
-    <div>
+    <Container>
       <h3>Options</h3>
       <div>
         <label htmlFor="autoClose">
@@ -50,7 +95,6 @@ export const Options: React.FC<OptionsProps> = ({
             ))}
           </select>
         </label>
-        <br />
         <label htmlFor="progress">
           Progress
           <input
@@ -59,7 +103,7 @@ export const Options: React.FC<OptionsProps> = ({
             id="progress"
             value={progress}
             onChange={handleInput}
-            placeholder="Value between 0 and 1"
+            placeholder="0..1"
             min="0"
             max="1"
           />
@@ -75,6 +119,14 @@ export const Options: React.FC<OptionsProps> = ({
           />
         </label>
       </div>
-    </div>
+      <OptionsContainer>
+        <ul>
+          {options.left}
+        </ul>
+        <ul>
+          {options.right}
+        </ul>
+      </OptionsContainer>
+    </Container>
   );
 };

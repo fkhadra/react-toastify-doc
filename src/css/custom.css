@@ -68,6 +68,8 @@ select {
   border-color: #ac557b;
   -webkit-appearance: none;
   -moz-appearance: none;
+  color: var(--ifm-font-base-color);
+  cursor: pointer;
 }
 
 label{

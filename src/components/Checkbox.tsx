@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 
 interface CheckboxProps {
   label: string;
@@ -7,13 +8,17 @@ interface CheckboxProps {
   onChange: (e: React.ChangeEvent) => void;
 }
 
+const Label = styled.label`
+  cursor: pointer;
+`
+
 export const Checkbox: React.FC<CheckboxProps> = ({
   label,
   onChange,
   id,
   checked,
 }) => (
-  <label htmlFor={id}>
+  <Label htmlFor={id}>
     <input
       id={id}
       type="checkbox"
@@ -22,5 +27,5 @@ export const Checkbox: React.FC<CheckboxProps> = ({
       onChange={onChange}
     />
     {label}
-  </label>
+  </Label>
 );

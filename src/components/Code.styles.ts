@@ -9,6 +9,10 @@ export const Code = styled.div`
   padding-left: 20px;
   background: #222;
   color: #fff;
+  min-height: 270px;
+  min-width: 270px;
+  padding: 25px;
+
   & div {
     margin-left: 20px;
   }
@@ -16,11 +20,11 @@ export const Code = styled.div`
   & div:last-child {
     margin: 0;
   }
-`
+`;
 
 /**
  * kind: 0 for component, 1 for props
  */
 export const Element = styled.span<{ kind: 0 | 1 }>`
-  color: ${props => props.kind === 0 ? '#66d9ef' : '#a6e22e'};
-` 
+  color: ${(props) => (props.kind === 0 ? "#66d9ef" : "#a6e22e")};
+`;
