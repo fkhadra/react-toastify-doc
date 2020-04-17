@@ -4,6 +4,8 @@ title: toast
 sidebar_label: toast
 ---
 
+## Props
+
 :::info Info
   When displaying a toast, the options are inherited from the container. Toast options supersede ToastContainer props
 :::
