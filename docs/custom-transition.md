@@ -61,10 +61,17 @@ import Transition from 'react-transition-group/Transition';
 import './style.css';
 
 const ZoomInAndOut = ({ children, position, ...props }) => (
+  // internal props can be deleted
+  delete props.preventExitTransition;
+
+  // When a toast has been removed this is the animation responsible for grouping the remaining toast
+  // delete props.onExited; 
+
   <Transition
     {...props}
     {/* Same as the animation duration */}
     timeout={800}
+    unmountOnExit
     onEnter={node => node.classList.add('zoomIn', 'animate')}
     onExit={node => {
       node.classList.remove('zoomIn', 'animate');
