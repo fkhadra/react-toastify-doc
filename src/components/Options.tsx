@@ -22,6 +22,10 @@ const OptionsContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 1rem;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `
 
 export const Options: React.FC<OptionsProps> = ({

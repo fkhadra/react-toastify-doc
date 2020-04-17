@@ -28,6 +28,7 @@ const FlexSection = styled.section`
   justify-content: space-between;
   flex-direction: "row";
   margin-bottom: 1rem;
+  flex-wrap: wrap;
 `;
 
 const Main = styled.main`

@@ -59,6 +59,10 @@ export const RadioContainer = styled.div`
   align-items: center;
   flex-wrap: wrap;
   margin-bottom: 2em;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 export interface RadioProps {
