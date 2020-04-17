@@ -1,6 +1,10 @@
 module.exports = {
   someSidebar: {
-    ["Getting Started"]: ["introduction","installation", "the-gist-of-react-toastify"],
+    ["Getting Started"]: [
+      "introduction",
+      "installation",
+      "the-gist-of-react-toastify",
+    ],
     Usages: [
       "positioning-toast",
       "autoClose",
@@ -24,8 +28,14 @@ module.exports = {
       "enable-right-to-left-support",
       "accessibility",
       "lazy-container-and-multi-container",
-      "how-to-style"
+      "how-to-style",
     ],
-    ['API Reference']: ["api/toast-container", "api/toast", "api/css-transition"]
-  }
+    ["API Reference"]: [
+      "api/toast-container",
+      "api/toast",
+      "api/css-transition",
+      "api/use-toast-container",
+      "api/use-toast",
+    ],
+  },
 };
