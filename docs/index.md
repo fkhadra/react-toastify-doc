@@ -4,16 +4,14 @@ title: React-toastify
 sidebar_label: Introduction
 ---
 
+
 [![Financial Contributors on Open Collective](https://opencollective.com/react-toastify/all/badge.svg?label=financial+contributors)](https://opencollective.com/react-toastify) ![Travis (.org)](https://img.shields.io/travis/fkhadra/react-toastify.svg?label=%F0%9F%9A%A7Build&style=for-the-badge)
 ![npm](https://img.shields.io/npm/dm/react-toastify.svg?label=%E2%8F%ACdownloads&style=for-the-badge)
 ![npm](https://img.shields.io/npm/v/react-toastify.svg?style=for-the-badge)
 ![NPM](https://img.shields.io/npm/l/react-toastify.svg?label=%F0%9F%93%9Clicense&style=for-the-badge)
 ![Coveralls github](https://img.shields.io/coveralls/github/fkhadra/react-toastify.svg?label=%E2%9B%B1coverage&style=for-the-badge)
-![React toastify](https://user-images.githubusercontent.com/5574267/35336500-e58f35b6-0118-11e8-800b-2da6594fc700.gif "React toastify")
 
 ## The playground
-
-
 
 import { App } from '../src/components/App'
 

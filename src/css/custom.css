@@ -24,12 +24,6 @@
   padding: 0 var(--ifm-pre-padding);
 }
 
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
 input {
   color: var(--ifm-font-base-color);
 }

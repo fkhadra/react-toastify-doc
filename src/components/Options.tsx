@@ -26,7 +26,11 @@ const OptionsContainer = styled.div`
     flex-direction: column;
     align-items: flex-start;
   }
-`
+  & ul {
+    list-style: none;
+    padding: 0;
+  }
+`;
 
 export const Options: React.FC<OptionsProps> = ({
   autoClose,
@@ -124,12 +128,8 @@ export const Options: React.FC<OptionsProps> = ({
         </label>
       </div>
       <OptionsContainer>
-        <ul>
-          {options.left}
-        </ul>
-        <ul>
-          {options.right}
-        </ul>
+        <ul>{options.left}</ul>
+        <ul>{options.right}</ul>
       </OptionsContainer>
     </Container>
   );
