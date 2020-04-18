@@ -47,7 +47,7 @@ toast(({ closeToast }) => <div>Functional swag 😎</div>);
 
 ## Awesome example 🚀
 
-Increment and display a toast at the same time to see how the state stay in sync !
+In this example we will use react context to share state accross a component and a toast. Increment and display a toast at the same time to see how the state stay in sync !
 
 import { ContextExample } from '../src/components/ContextExample';
 
