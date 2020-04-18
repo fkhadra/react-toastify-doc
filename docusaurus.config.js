@@ -12,7 +12,13 @@ module.exports = {
     },
     navbar: {
       title: "React-Toastify",
-      links: [],
+      links: [
+        {
+          to: 'https://github.com/fkhadra/react-toastify',
+          label: 'GitHub',
+          position: 'right', 
+        }
+      ],
     },
     footer: {
       style: "dark",
