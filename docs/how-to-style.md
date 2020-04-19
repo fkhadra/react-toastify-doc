@@ -100,13 +100,11 @@ scss
 
 The `ToastContainer` accept the following props for styling:
 
-- className: applied at the root
-- groupClassName: applied on the TransitionGroup component
+- className: applied to the container
 - toastClassName: applied on the toast wrapper
 - bodyClassName: applied on the toast body
 - progressClassName: applied on the progress bar
-- style: inline style applied to the root
-- groupStyle: inline style applied on the TransitionGroup component 
+- style: inline style applied to the container
 
 ```jsx
 <ToastContainer className="foo" style={{ width: "2000px" }} />

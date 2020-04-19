@@ -19,9 +19,7 @@ sidebar_label: ToastContainer
 | closeOnClick         | bool              | true      | Dismiss toast on click                                                                                      |
 | newestOnTop          | bool              | false     | Display newest toast on top                                                                                 |
 | className            | string            | -         | Add optional classes to the container                                                                       |
-| grouClassName        | string            | -         | Add optional classes to the TransitionGroup container                                                       |
 | style                | object            | -         | Add optional inline style to the container                                                                  |
-| groupStyle           | object            | -         | Add optional inline style to the TransitionGroup container                                                  |
 | toastClassName       | string            | -         | Add optional classes to the toast                                                                           |
 | bodyClassName        | string            | -         | Add optional classes to the toast body                                                                      |
 | progressClassName    | string            | -         | Add optional classes to the progress bar                                                                    |
