@@ -24,6 +24,12 @@ module.exports = {
       style: "dark",
       copyright: `Copyright © ${new Date().getFullYear()} Fadi Khadra`,
     },
+    announcementBar: {
+      id: 'feedback', // Any value that will identify this message
+      content: 'Hey any feedback regarding the v6 or the new doc ? please comment <a target="_blank" rel="noopener noreferrer" href="https://github.com/fkhadra/react-toastify/issues/459">this issue</a>',
+      
+    }
+
   },
   stylesheets: [
       "/static/ReactToastify.min.css"
