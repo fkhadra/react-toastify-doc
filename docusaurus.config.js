@@ -25,6 +25,9 @@ module.exports = {
       copyright: `Copyright © ${new Date().getFullYear()} Fadi Khadra`,
     },
   },
+  stylesheets: [
+      "/static/ReactToastify.min.css"
+  ],
   presets: [
     [
       "@docusaurus/preset-classic",
@@ -36,12 +39,7 @@ module.exports = {
             "https://github.com/fkhadra/react-toastify-doc/edit/master/",
         },
         theme: {
-          customCss: [
-            require.resolve("./src/css/custom.css"),
-            require.resolve(
-              "./node_modules/react-toastify/dist/ReactToastify.min.css"
-            ),
-          ],
+          customCss: require.resolve("./src/css/custom.css"),
         },
       },
     ],
