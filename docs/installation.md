@@ -13,11 +13,17 @@ sidebar_label: Installation
 With npm:
 ```sh
 npm install --save react-toastify
+
+# for v6 RC
+npm install --save react-toastify@next 
 ```
 
 With yarn:
 ```
 yarn add react-toastify
+
+# for v6 RC
+yarn add react-toastify@next
 ```
 
 ## Video tutorial

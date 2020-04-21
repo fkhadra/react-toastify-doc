@@ -11,6 +11,10 @@ sidebar_label: Introduction
 ![NPM](https://img.shields.io/npm/l/react-toastify.svg?label=%F0%9F%93%9Clicense&style=for-the-badge)
 ![Coveralls github](https://img.shields.io/coveralls/github/fkhadra/react-toastify.svg?label=%E2%9B%B1coverage&style=for-the-badge)
 
+:::info Information
+  Hey this is a new documentation starting v6. Most of the features are BC with v5. Feature that work only with v6 contain 'v6' in their title.
+:::
+
 ## The playground
 
 import { App } from '../src/components/App'

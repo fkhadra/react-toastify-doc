@@ -1,7 +1,7 @@
 ---
 id: 'limit-the-number-of-toast-displayed'
-title: 'Limit the number of toast displayed'
-sidebar_label: 'Limit the number of toast displayed'
+title: 'Limit the number of toast displayed (v6)'
+sidebar_label: 'Limit the number of toast displayed (v6)'
 ---
 
 Notifications are useful to get the attention of the user. But displaying too many of them can also be counterproductive.
