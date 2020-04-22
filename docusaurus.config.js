@@ -32,7 +32,7 @@ module.exports = {
 
   },
   stylesheets: [
-      "/static/ReactToastify.min.css"
+      "/ReactToastify.min.css"
   ],
   presets: [
     [
