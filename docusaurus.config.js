@@ -4,8 +4,8 @@ module.exports = {
   url: "https://fkhadra.github.io/",
   baseUrl: "/react-toastify/",
   favicon: "img/favicon.ico",
-  organizationName: "fkhadra", 
-  projectName: "react-toastify", 
+  organizationName: "fkhadra",
+  projectName: "react-toastify",
   themeConfig: {
     prism: {
       theme: require("prism-react-renderer/themes/dracula"),
@@ -14,10 +14,10 @@ module.exports = {
       title: "React-Toastify",
       links: [
         {
-          to: 'https://github.com/fkhadra/react-toastify',
-          label: 'GitHub',
-          position: 'right', 
-        }
+          to: "https://github.com/fkhadra/react-toastify",
+          label: "GitHub",
+          position: "right",
+        },
       ],
     },
     footer: {
@@ -25,15 +25,17 @@ module.exports = {
       copyright: `Copyright © ${new Date().getFullYear()} Fadi Khadra`,
     },
     announcementBar: {
-      id: 'feedback', // Any value that will identify this message
-      content: 'Hey any feedback regarding the v6 or the new doc ? please comment <a target="_blank" rel="noopener noreferrer" href="https://github.com/fkhadra/react-toastify/issues/459">this issue</a>',
-      
-    }
-
+      id: "feedback", // Any value that will identify this message
+      content:
+        'Hey any feedback regarding the v6 or the new doc ? please comment <a target="_blank" rel="noopener noreferrer" href="https://github.com/fkhadra/react-toastify/issues/459">this issue</a>',
+    },
+    algolia: {
+      apiKey: "f54fc6c27b73c67cf37ad6f02753423b",
+      indexName: "react-toastify",
+      algoliaOptions: {}, // Optional, if provided by Algolia
+    },
   },
-  stylesheets: [
-      "/ReactToastify.min.css"
-  ],
+  stylesheets: ["/ReactToastify.min.css"],
   presets: [
     [
       "@docusaurus/preset-classic",
@@ -41,8 +43,7 @@ module.exports = {
         docs: {
           routeBasePath: "",
           sidebarPath: require.resolve("./sidebars.js"),
-          editUrl:
-            "https://github.com/fkhadra/react-toastify-doc/edit/master/",
+          editUrl: "https://github.com/fkhadra/react-toastify-doc/edit/master/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
