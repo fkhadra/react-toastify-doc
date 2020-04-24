@@ -1,3 +1,4 @@
+// Credit to https://codepen.io/kocsten/pen/rggjXp
 import styled, { keyframes } from "styled-components";
 
 const glowingInTheDark = keyframes`
