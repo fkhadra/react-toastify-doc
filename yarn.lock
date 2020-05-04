@@ -7521,10 +7521,10 @@ react-side-effect@^2.1.0:
   resolved "https://registry.yarnpkg.com/react-side-effect/-/react-side-effect-2.1.0.tgz#1ce4a8b4445168c487ed24dab886421f74d380d3"
   integrity sha512-IgmcegOSi5SNX+2Snh1vqmF0Vg/CbkycU9XZbOHJlZ6kMzTmi3yc254oB1WCkgA7OQtIAoLmcSFuHTc/tlcqXg==
 
-react-toastify@^6.0.0-rc.0:
-  version "6.0.0-rc.0"
-  resolved "https://registry.yarnpkg.com/react-toastify/-/react-toastify-6.0.0-rc.0.tgz#4b12b2998ea0163087949c79dc18458d4a162041"
-  integrity sha512-IKaHHXxIUEpb1CBn0I1Hj9iBDlC8JcEtG5BdkzhI9QO0TCxKaR6WIaXWiwFwBOW+AXyyQ2YeX8ZdpfO3FpKq6Q==
+react-toastify@^6.0.0-rc.1:
+  version "6.0.0-rc.1"
+  resolved "https://registry.yarnpkg.com/react-toastify/-/react-toastify-6.0.0-rc.1.tgz#ba676b745b074c8862d5174d8b93922c31b17c33"
+  integrity sha512-LLFtPzCYsk4MQkdIP3V2lVwgZ0zmQv8St2j9NHsxtHnjpwYLXzwYL16bhAcB0gwPzgW4NIrFAQ+TbIzse+tYOw==
   dependencies:
     classnames "^2.2.6"
     prop-types "^15.7.2"
