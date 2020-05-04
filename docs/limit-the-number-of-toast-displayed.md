@@ -31,3 +31,42 @@ function App(){
   )
 }
 ```
+
+## How to clear the waiting queue
+
+You may need to clear the waiting queue in some cases. This is really easy to do.
+
+```jsx
+import React from 'react';
+import { toast, ToastContainer } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
+
+function App(){
+
+  const clearWaitingQueue = () => {
+    // Easy, right 😎
+    toast.clearWaitingQueue();
+  }
+
+
+  const notify = () => {
+    toast("lorem ipsum");
+  }
+
+  return (
+    <div>
+      <button onClick={notify}>Click on me a lot!</button>
+      <ToastContainer limit={3}>
+    </div>
+  )
+}
+```
+
+You can also decide which queue to empty while working with multiple container.
+
+```jsx
+toast.clearWaitingQueue({ containerId: "an Id" });
+```
+
+

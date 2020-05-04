@@ -83,6 +83,13 @@ toast.update(toastId, {
   render: <Img foo={bar}/>
 });
 
+// Clear waiting queue when working with limit
+toast.clearWaitingQueue();
+
+// Clear waiting queue for a specific container when working with multiple container
+toast.clearWaitingQueue({ containerId: "anId" });
+
+
 // completes the controlled progress bar
 toast.done(toastId);
 
