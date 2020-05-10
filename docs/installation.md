@@ -6,24 +6,18 @@ sidebar_label: Installation
 
 ## Requirements
 
-- [React](https://reactjs.org) version >= 16.8 or above is required starting version 6
+- [React](https://reactjs.org) version >= 16.8 or above 
 
 ## Installation
 
 With npm:
 ```sh
 npm install --save react-toastify
-
-# for v6 RC
-npm install --save react-toastify@next 
 ```
 
 With yarn:
 ```
 yarn add react-toastify
-
-# for v6 RC
-yarn add react-toastify@next
 ```
 
 ## Video tutorial

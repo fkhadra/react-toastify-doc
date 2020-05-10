@@ -12,6 +12,5 @@ const unsubsribe = toast.onChange((numberOfToastDisplayed, containerId) => {
   // The containerId is useful when working with multiple containers
 });
 
-// (v6) only
 unsubscribe();
 ```
