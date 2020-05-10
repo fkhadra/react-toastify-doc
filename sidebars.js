@@ -4,7 +4,7 @@ module.exports = {
       "introduction",
       "installation",
       "the-gist-of-react-toastify",
-      "release-notes"
+      "release-notes",
     ],
     Usages: [
       "positioning-toast",
@@ -36,6 +36,7 @@ module.exports = {
       "api/toast-container",
       "api/toast",
       "api/css-transition",
+      "api/collapse-toast",
       "api/use-toast-container",
       "api/use-toast",
     ],

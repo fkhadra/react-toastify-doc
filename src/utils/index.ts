@@ -11,7 +11,7 @@ export const containerOptions = [
   },
   {
     id: "newestOnTop",
-    label: "Newest on top*",
+    label: "Newest on top* (play nice with bottom toast)",
   },
   {
     id: "closeOnClick",

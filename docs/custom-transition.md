@@ -6,9 +6,7 @@ sidebar_label: 'Define a custom enter and exit transition'
 
 The toast relies on `react-transition-group` for the enter and exit transition. Any transition built with react-transition-group should work!
 
-## Create a transition from scratch
-
-I'll use the zoom animation from animate.css. Of course, you could create your own animation.
+I'll use the zoom animation from animate.css to build a custom transition
 
 ![toastify_custom_trans](https://user-images.githubusercontent.com/5574267/31049179-0d52e14c-a62e-11e7-9abd-b0d169a0fadc.gif)
 
@@ -43,62 +41,13 @@ I'll use the zoom animation from animate.css. Of course, you could create your o
     opacity: 0;
   }
 }
-
-.zoomOut {
-  animation-name: zoomOut;
-}
-
-.animate {
-  animation-duration: 800ms;
-}
 ```
 
-
-```jsx
-import React from 'react';
-import { toast } from 'react-toastify';
-import Transition from 'react-transition-group/Transition';
-import './style.css';
-
-const ZoomInAndOut = ({ children, position, ...props }) => (
-  // internal props can be deleted
-  delete props.preventExitTransition;
-
-  // When a toast has been removed this is the animation responsible for grouping the remaining toast
-  // delete props.onExited; 
-
-  <Transition
-    {...props}
-    {/* Same as the animation duration */}
-    timeout={800}
-    unmountOnExit
-    onEnter={node => node.classList.add('zoomIn', 'animate')}
-    onExit={node => {
-      node.classList.remove('zoomIn', 'animate');
-      node.classList.add('zoomOut', 'animate');
-    }}
-  >
-    {children}
-  </Transition>
-);
-
-function App(){
-  const notify = () => {
-    toast("ZoomIn and ZoomOut", {
-      transition: ZoomInAndOut,
-      autoClose: 5000
-    });
-  };
-
-  return <button onClick={this.notify}>Notify</button>;
-}
-
-```
-
-## Ease your life with the cssTransition helper
+## Using the cssTransition helper
 
 The easiest way to roll your own transition is by using the `cssTransition` helper. Doing so you don't need to deal with `react-transition-group`. You only need to provide the `enter` and the `exit` class name, the transition `duration` is set
-to `750ms` by default but it can be overridden:
+to `750ms` by default but it can be overridden.
+The `cssTransition` will also take care to collapse the toast when they exited.
 
 ```jsx
 import React from 'react';
@@ -108,18 +57,16 @@ import './style.css';
 const Zoom = cssTransition({
   enter: 'zoomIn',
   exit: 'zoomOut',
-  duration: 800,
 });
 
 function App(){
   const notify = () => {
     toast("ZoomIn and ZoomOut", {
       transition: Zoom,
-      autoClose: 5000
     });
   };
 
-  return <button onClick={this.notify}>Notify</button>;
+  return <button onClick={notify}>Notify</button>;
 }
 ```
 
@@ -131,7 +78,13 @@ If you want the transition duration to be different between the enter and exit t
 const Zoom = cssTransition({
   enter: 'zoomIn',
   exit: 'zoomOut',
-  duration: [500, 800]
+  duration: 500 // both transition duration will be 500ms
+});
+
+const Zoom = cssTransition({
+  enter: 'zoomIn',
+  exit: 'zoomOut',
+  duration: [500, 800] // zoomIn will last 500ms while zoomOut will last 800ms
 });
 ```
 
@@ -149,3 +102,113 @@ const Zoom = cssTransition({
   appendPosition: true
 });
 ```
+
+:::important Important
+Don't forget to add the position as well when you write your css animations
+:::
+
+### Prevent the toast from collapsing after the exit animation
+
+By default, the remaining toast will collapse smoothly
+
+<iframe width="100%" height="365" src="https://www.youtube.com/embed/Hui3GZKRDpM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
+
+This can be disabled as well:
+
+```js
+const Zoom = cssTransition({
+  collapse: false,
+  enter: 'zoomIn', 
+  exit: 'zoomOut', 
+});
+```
+
+### Tweak collapse duration
+
+The default duration is 300ms. This is also easy to change 💪
+
+```js
+const Zoom = cssTransition({
+  collapseDuration: 500,
+  enter: 'zoomIn', 
+  exit: 'zoomOut', 
+});
+```
+
+## Create a transition with the Transition component 
+
+You can also use the `Transition` component from react-transition-group if you want more control.
+
+When you create your own transition the following props are passed:
+- in: this tell if the component is visible or not (same as react-transition-group)
+- appear: this tell to animate the component when it's visible (same as react-transition-group)
+- nodeRef: the node ref.(same as react-transition-group)
+- done: this callback should be called at the end of your transition
+- position: the toast position
+- preventExitTransition: this will be true if the toast has been closed by a drag event
+
+In the example below we will reimplement the `cssTransition` helper.
+
+```jsx
+import React from 'react';
+import { toast, collapseToast } from 'react-toastify';
+import { Transition } from 'react-transition-group';
+
+
+const ZoomInAndOut = ({ children, position, done, nodeRef ...props }) => {
+  const node = nodeRef.current;
+
+  const onEnter = () => {
+      node.classList.add("the class used on enter");
+      node.style.animationFillMode = 'forwards';
+      node.style.animationDuration = '800ms';
+  }
+
+  // let's clean a bit 🤣
+  const onEntered = () => {
+    node.classList.remove("the class used on enter");
+    node.style.cssText = '';
+  }
+
+  const onExit = () => {
+      node.classList.add(exitClassName);
+      node.style.animationFillMode = 'forwards';
+      node.style.animationDuration = '800ms';
+      // listen for our exit animation to finish and trigger collapseStart
+      node.addEventListener('animationend', onCollapseStart)
+  };
+
+  const onCollapseStart = () => {
+    collapseToast(node, done, 300);
+    // clean the listener
+    node.removeEventListener('animationend', onCollapseStart);
+  };
+
+  // specify the duration of the animation. For the exit, we add collapse duration as well
+  const timeout = {
+    enter: 800, 
+    exit: 800 + 300 
+  }
+
+  return (
+    <Transition
+      {/* spread remaining props: in, appear */}
+      {...props}
+      unmountOnExit
+      nodeRef={nodeRef}
+      {/* toast has been closed by drag, no animation need */}
+      timeout={ preventExitTransition ? 0 : timeout}
+      onEnter={onEnter}
+      onEntered={onEntered}
+      {/* if toast has been closed by drag don't animate */}
+      onExit={preventExitTransition ? done : onExit}
+  >
+    {children}
+  </Transition>    
+  )
+};
+```
+
+This can seem intimidating but if you know react-transition-group, this is really straightforward.
+
+Of course, you could also the CSSTransition component if you wish.
