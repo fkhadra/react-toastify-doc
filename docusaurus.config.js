@@ -25,9 +25,9 @@ module.exports = {
       copyright: `Copyright © ${new Date().getFullYear()} Fadi Khadra`,
     },
     announcementBar: {
-      id: "feedback", // Any value that will identify this message
+      id: "sponsor", // Any value that will identify this message
       content:
-        'Hey any feedback regarding the v6 or the new doc ? please comment <a target="_blank" rel="noopener noreferrer" href="https://github.com/fkhadra/react-toastify/issues/459">this issue</a>',
+        'Hey you like my work? Consider <a target="_blank" rel="noopener noreferrer" href="https://github.com/sponsors/fkhadra">sponsoring</a> me',
     },
     algolia: {
       apiKey: "f54fc6c27b73c67cf37ad6f02753423b",
