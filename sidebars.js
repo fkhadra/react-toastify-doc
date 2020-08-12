@@ -6,7 +6,7 @@ module.exports = {
       "the-gist-of-react-toastify",
       "release-notes",
     ],
-    Usages: [
+    Usage: [
       "positioning-toast",
       "autoClose",
       "render-what-you-want",
