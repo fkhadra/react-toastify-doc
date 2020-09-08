@@ -184,7 +184,7 @@ const StyledToastContainer = styled(ToastContainer).attrs({
 If you want to style from scratch simply include the bare minimum style and you are good to go.
 
 ```jsx
-import 'react-toastify/dist/ReactToastify.minimal.css';
+import 'react-toastify/dist/ReactToastify.min.css';
 ```
 
 ## Mobile
