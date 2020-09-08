@@ -16,6 +16,8 @@ function getType(type: string) {
       return "toast.info";
     case "warning":
       return "toast.warn";
+    case "dark":
+      return "toast.dark";
   }
 }
 
