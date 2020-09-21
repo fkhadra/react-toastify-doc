@@ -25,7 +25,7 @@ function Example(){
 
         // check if we already displayed a toast
         if(toastId.current === null){
-            toastId = toast('Upload in Progress', {
+            toastId.current = toast('Upload in Progress', {
             progress: progress
           });
         } else {
