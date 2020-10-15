@@ -18,3 +18,4 @@ toast("hello", {
 })
 ```
 
+Refer to https://www.w3.org/WAI/PF/aria/roles for more information.
