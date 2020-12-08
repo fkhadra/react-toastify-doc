@@ -1,11 +1,6 @@
 module.exports = {
   someSidebar: {
-    ["Getting Started"]: [
-      "introduction",
-      "installation",
-      "the-gist-of-react-toastify",
-      "release-notes",
-    ],
+    ["Getting Started"]: ["introduction", "installation", "release-notes"],
     Usage: [
       "positioning-toast",
       "autoClose",
