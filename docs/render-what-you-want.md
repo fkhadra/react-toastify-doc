@@ -9,16 +9,16 @@ You can render any valid `ReactNode`: string, number, component... This is reall
 ## Basic example
 
 :::important Important
-  When you render a component, a `closeToast` prop is injected into your component.
+  When you render a component, a `closeToast` prop and the `toastProps` are injected into your component.
 :::
 
 ```jsx
 import React from 'react';
 import { ToastContainer, toast } from "react-toastify";
 
-const Msg = ({ closeToast }) => (
+const Msg = ({ closeToast, toastProps }) => (
   <div>
-    Lorem ipsum dolor
+    Lorem ipsum dolor {toastProps.position}
     <button>Retry</button>
     <button onClick={closeToast}>Close</button>
   </div>
@@ -45,7 +45,7 @@ You can also render a component using a function. More or less like a "render pr
 toast(({ closeToast }) => <div>Functional swag 😎</div>);
 ```
 
-## Awesome example 🚀
+## Example with react context 🚀
 
 In this example we will use react context to share state accross a component and a toast. Increment and display a toast at the same time to see how the state stay in sync !
 
