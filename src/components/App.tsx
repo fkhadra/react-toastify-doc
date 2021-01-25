@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { RadioList } from "./RadioList";
 import { ContainerCode } from "./ContainerCode";
 import { ToastCode } from "./ToastCode";
@@ -9,8 +9,6 @@ import { Actions } from "./Actions";
 import styled from "styled-components";
 
 import { transitions } from "../utils";
-
-injectStyle();
 
 function getDefaultState() {
   return {
@@ -40,6 +38,10 @@ const Main = styled.main`
 export function App() {
   const [state, setState] = useState(() => getDefaultState());
   const toastId = useRef<Id>();
+
+  useEffect(() => {
+    injectStyle();
+  }, []);
 
   const isDefaultProps = () => {
     return (
