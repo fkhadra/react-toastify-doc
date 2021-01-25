@@ -1,14 +1,16 @@
 import React, { useState, useRef } from "react";
 import { RadioList } from "./RadioList";
-import { Checkbox } from "./Checkbox";
 import { ContainerCode } from "./ContainerCode";
 import { ToastCode } from "./ToastCode";
 import { ToastContainer, toast, Id } from "react-toastify";
+import { injectStyle } from "react-toastify/dist/inject-style";
 import { Options } from "./Options";
 import { Actions } from "./Actions";
 import styled from "styled-components";
 
-import { containerOptions, transitions } from "../utils";
+import { transitions } from "../utils";
+
+injectStyle();
 
 function getDefaultState() {
   return {

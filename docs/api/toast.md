@@ -29,6 +29,7 @@ sidebar_label: toast
 | progressStyle     | object            | Add optional inline style to the progress bar                                                       |
 | draggable         | bool              | Allow toast to be draggable                                                                         |
 | draggablePercent  | number            | The percentage of the toast's width it takes for a drag to dismiss a toast(value between 0 and 100) |
+| draggableDirection   | "x" \| "y"        | x         | Specify the drag direction.                                                                                 |
 | containerId       | string \| number  | Used to match a specific Toast container                                                            |
 | role              | string            | Define the ARIA role for the toasts                                                                 |
 | delay             | number            | Let you delay the toast appearance. Pass a value in ms                                              |

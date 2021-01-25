@@ -19,7 +19,7 @@ module.exports = {
       "add-an-undo-action-to-a-toast",
       "use-react-toastify-with-redux",
       "replace-default-transition",
-      "custom-transition",
+      "custom-animation",
       "drag-to-remove",
       "enable-right-to-left-support",
       "accessibility",

@@ -216,6 +216,32 @@ If you want to style from scratch simply include the bare minimum style and you 
 import 'react-toastify/dist/ReactToastify.minimal.css';
 ```
 
+## Inject style on demand
+
+If you don't have a css loader or you want to inject the style on demand(convenient with css module), the library provide a helper for that
+
+```js
+import { injectStyle } from "react-toastify/dist/inject-style";
+
+// CALL IT ONCE IN YOUR APP
+injectStyle();
+```
+
+<iframe src="https://codesandbox.io/embed/react-toastify-inject-style-qfg0l?fontsize=14&hidenavigation=1&theme=dark&view=preview"
+     style={
+       {
+            width:"100%",
+            height: "500px",
+            border:0,
+          borderRadius: "4px",
+          overflow:"hidden"
+       }
+     }
+     title="react-toastify-inject-style"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+
 ## Mobile
 
 On mobile, the toast will take all the available width.

@@ -26,9 +26,10 @@ sidebar_label: ToastContainer
 | progressStyle        | object            | -         | Add optional inline style to the progress bar                                                               |
 | draggable            | bool              | true      | Allow toast to be draggable                                                                                 |
 | draggablePercent     | number            | 80        | The percentage of the toast's width it takes for a drag to dismiss a toast(value between 0 and 100)         |
+| draggableDirection   | "x" \| "y"        | x         | Specify the drag direction.                                                                                 |
 | enableMultiContainer | bool              | -         | Enable multi toast container support                                                                        |
 | containerId          | string \| number  | -         | Used to identify the ToastContainer when working with multiple container. Also used to set the id attribute |
-| limit                | number            | -         | Used to limit the number of toast displayed on screen at the same time                                    |
+| limit                | number            | -         | Used to limit the number of toast displayed on screen at the same time                                      |
 | role                 | string            | alert     | Define the ARIA role for the toasts                                                                         |
 
 ## Usage
