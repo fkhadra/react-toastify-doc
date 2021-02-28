@@ -144,7 +144,7 @@ const App = ()=> {
    <Main />
    <ToastContainer
       toastClassName={({ type }) => contextClass[type || "default"] + 
-        " flex p-1 min-h-10 rounded-md justify-between overflow-hidden cursor-pointer"
+        " relative flex p-1 min-h-10 rounded-md justify-between overflow-hidden cursor-pointer"
       }
       bodyClassName={() => "text-sm font-white font-med block p-3"}
       position="bottom-left"
