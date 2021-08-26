@@ -8,6 +8,7 @@ interface ActionsProps {
   updateToast: Fn;
   clearAll: Fn;
   handleReset: Fn;
+  showPromise: Fn;
 }
 
 export const Actions: React.FC<ActionsProps> = ({
@@ -15,6 +16,7 @@ export const Actions: React.FC<ActionsProps> = ({
   handleReset,
   showToast,
   updateToast,
+  showPromise,
 }) => {
   return (
     <Container>
@@ -24,6 +26,7 @@ export const Actions: React.FC<ActionsProps> = ({
         </span>{" "}
         Show Toast
       </Button>
+      <Button onClick={showPromise}>Promise</Button>
       <Button onClick={updateToast}>
         <span role="img" aria-label="update"></span> Update
       </Button>

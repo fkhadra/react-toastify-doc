@@ -28,6 +28,7 @@ By default, all toasts will inherit ToastContainer's props. Props defined on toa
 - Super easy to customize
 - RTL support
 - Swipe to close 👌
+- Beautiful by default
 - Can choose swipe direction
 - Super easy to use an animation of your choice
 - Can display a react component inside the toast!
@@ -40,7 +41,8 @@ By default, all toasts will inherit ToastContainer's props. Props defined on toa
 - You can control the progress bar a la `nprogress` 😲
 - You can limit the number of toast displayed at the same time
 - Dark mode 🌒
-- Only 5.5k !
+- Colored theme
+- Promise support
 - And much more !
 
 ## Contribute

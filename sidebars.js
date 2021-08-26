@@ -1,11 +1,18 @@
 module.exports = {
   someSidebar: {
-    ["Getting Started"]: ["introduction", "installation", "release-notes"],
+    ["Getting Started"]: [
+      "introduction",
+      "installation",
+      "migration-v8",
+      "release-notes",
+    ],
     Usage: [
       "positioning-toast",
       "autoClose",
       "render-what-you-want",
       "remove-toast",
+      "promise",
+      "icons",
       "pause-on-focus-loss",
       "use-a-custom-id",
       "prevent-duplicate",

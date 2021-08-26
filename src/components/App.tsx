@@ -35,6 +35,9 @@ const Main = styled.main`
   margin-top: 1rem;
 `;
 
+const theme = { light: "light", dark: "dark", colored: "colored" };
+let resolvePromise = true;
+
 export function App() {
   const [state, setState] = useState(() => getDefaultState());
   const toastId = useRef<Id>();
@@ -54,7 +57,8 @@ export function App() {
       state.pauseOnFocusLoss &&
       state.pauseOnHover &&
       state.closeOnClick &&
-      state.draggable
+      state.draggable &&
+      state.theme === "light"
     );
   };
 
@@ -68,7 +72,21 @@ export function App() {
     toastId.current =
       state.type === "default"
         ? toast("🦄 Wow so easy !", { progress: state.progress })
-        : toast[state.type]("🚀 Wow so easy !", { progress: state.progress });
+        : toast[state.type]("Wow so easy !", { progress: state.progress });
+  };
+
+  const showPromise = () => {
+    toast.promise(
+      new Promise((resolve, reject) => {
+        setTimeout(resolvePromise ? resolve : reject, 3000);
+        resolvePromise = !resolvePromise;
+      }),
+      {
+        error: "Promise rejected",
+        success: "Promise resolved",
+        pending: "Promise is pending...",
+      }
+    );
   };
 
   const updateToast = () =>
@@ -120,6 +138,15 @@ export function App() {
           onChange={handleInput}
         />
       </div>
+      <div>
+        <h3>Theme</h3>
+        <RadioList
+          options={theme}
+          name="theme"
+          checked={state.theme}
+          onChange={handleInput}
+        />
+      </div>
       <Options
         {...state}
         handleAutoCloseDelay={handleAutoCloseDelay}
@@ -130,6 +157,7 @@ export function App() {
         clearAll={clearAll}
         handleReset={handleReset}
         showToast={showToast}
+        showPromise={showPromise}
         updateToast={updateToast}
       />
       <ToastContainer

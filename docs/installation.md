@@ -46,9 +46,3 @@ yarn add react-toastify
 Remember to render the `ToastContainer` *once* in your application tree. 
 If you can't figure out where to put it, rendering it in the application root would be the best bet.
 :::
-
-## Video tutorial
-
-Awesome video tutorial from [Codevolution](https://www.youtube.com/channel/UC80PWRj_ZU8Zu0HSMNVwKWw/featured).
-
-<iframe width="100%" height="515" src="https://www.youtube.com/embed/nX_xDBR_gqo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
