@@ -14,7 +14,7 @@
     "classnames": "^2.2.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-toastify": "^8.0.0",
+    "react-toastify": "^8.0.2",
     "styled-components": "^5.1.0"
   },
   "browserslist": {

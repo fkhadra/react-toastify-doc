@@ -92,5 +92,5 @@ If you want to take care of each step yourself you can use `toast.loading` and u
 ```tsx
 const id = toast.loading("Please wait...")
 //do something else
-toast.update(id, { render: "All is good", type: "success" });
+toast.update(id, { render: "All is good", type: "success", isLoading: false });
 ```
