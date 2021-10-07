@@ -99,7 +99,7 @@ toast.promise(
       },
       error: {
         render({data}){
-          // When the promise reject, data will contains the error
+          // When the promise is rejected, data will contain the error
           return <MyErrorComponent message={data.message} />
         }
       }
