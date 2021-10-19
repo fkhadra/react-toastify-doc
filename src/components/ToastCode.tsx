@@ -31,6 +31,7 @@ export const ToastCode: React.FC<PlaygroundState> = ({
   type,
   draggable,
   progress,
+  theme
 }) => (
   <div>
     <h3>Toast Emitter</h3>
@@ -69,6 +70,10 @@ export const ToastCode: React.FC<PlaygroundState> = ({
           {`: ${progress}`},
         </div>
       )}
+      <div>
+        <Element kind={1}>theme</Element>
+        {`: "${theme}"`},
+      </div>
       <div>{`});`}</div>
     </Code>
   </div>
