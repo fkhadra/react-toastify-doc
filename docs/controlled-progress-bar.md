@@ -24,14 +24,10 @@ function Example(){
         const progress = p.loaded / p.total;
 
         // check if we already displayed a toast
-        if(toastId.current === null){
-            toastId.current = toast('Upload in Progress', {
-            progress: progress
-          });
+        if (toastId.current === null) {
+          toastId.current = toast('Upload in Progress', { progress });
         } else {
-          toast.update(toastId.current, {
-            progress: progress
-          })
+          toast.update(toastId.current, { progress });
         }
       }
     }).then(data => {
