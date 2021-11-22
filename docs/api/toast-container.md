@@ -7,7 +7,7 @@ sidebar_label: ToastContainer
 ## Props
 
 | Props                | Type              | Default   | Description                                                                                                 |
-|----------------------|-------------------|-----------|-------------------------------------------------------------------------------------------------------------|
+| -------------------- | ----------------- | --------- | ----------------------------------------------------------------------------------------------------------- |
 | position             | string            | top-right | One of top-right, top-center, top-left, bottom-right, bottom-center, bottom-left                            |
 | autoClose            | bool \| number    | 5000      | Delay in ms to close the toast. If set to false, the notification needs to be closed manually               |
 | closeButton          | ReactNode \| bool | -         | A React Component to replace the default close button or `false` to hide the button                         |
@@ -31,13 +31,14 @@ sidebar_label: ToastContainer
 | containerId          | string \| number  | -         | Used to identify the ToastContainer when working with multiple container. Also used to set the id attribute |
 | limit                | number            | -         | Used to limit the number of toast displayed on screen at the same time                                      |
 | role                 | string            | alert     | Define the ARIA role for the toasts                                                                         |
+| theme                | string            | light     | One of light, dark, colored                                                                                 |
 
 ## Usage
 
 ```jsx
 import { ToastContainer } from 'react-toastify';
 
-<ToastContainer 
+<ToastContainer
   containerId="an id"
   draggable={false}
   {/* etc... */}
