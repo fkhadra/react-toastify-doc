@@ -39,7 +39,7 @@ sidebar_label: toast
 
 ## Usages
 
-All the method of toast return a **toastId** except `dismiss` and `isActive`.
+All the toast methods return a **toastId** except `dismiss` and `isActive`.
 The **toastId** can be used to remove a toast programmatically or to check if the toast is displayed.
 
 ```jsx
