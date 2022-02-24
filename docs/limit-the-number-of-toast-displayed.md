@@ -7,7 +7,7 @@ sidebar_label: 'Limit the number of toast displayed'
 Notifications are useful to get the attention of the user. But displaying too many of them can also be counterproductive.
 The `ToastContainer` expose a `limit` prop to meet your needs.
 
-:::tip What happend to the notifications that are not displayed ? 🧐
+:::tip What happens to the notifications that are not displayed ? 🧐
   They are added to a queue. They will be displayed as soon as a slot is free.
 :::
 
