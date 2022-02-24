@@ -77,7 +77,7 @@ export const Options: React.FC<OptionsProps> = ({
       <h3>Options</h3>
       <div>
         <label htmlFor="autoClose">
-          Delay
+          Autoclose Delay
           <input
             type="number"
             name="autoClose"
