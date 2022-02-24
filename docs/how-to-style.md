@@ -232,7 +232,7 @@ const App = ()=> {
 
 ### Extend existing css classes
 
-You can override the css classes with `styled-components`. You can find the list of the css classes used [here](/how-to-style#override-existing-css-classes). This is where you will also define the style for your notification.
+You can override the css classes with `styled-components`. You can find the list of the css classes used [here](react-toastify/how-to-style#override-existing-css-classes). This is where you will also define the style for your notification.
 
 ```jsx
 import React from 'react';
