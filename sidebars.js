@@ -34,6 +34,7 @@ module.exports = {
       "how-to-style",
       "dispatch-toast-outside-of-react-component",
     ],
+    Addons: ["addons/use-notification-center"],
     ["API Reference"]: [
       "api/toast-container",
       "api/toast",
