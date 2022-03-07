@@ -10,32 +10,33 @@ sidebar_label: toast
   When displaying a toast, the options are inherited from the container. Toast options supersede ToastContainer props
 :::
 
-| Options           | Type              | Description                                                                                         |
-|-------------------|-------------------|-----------------------------------------------------------------------------------------------------|
-| type              | string            | One of info, success, warning, error                                                                |
-| position          | string            | One of top-right, top-center, top-left, bottom-right, bottom-center, bottom-left                    |
-| onOpen            | function          | Called when the notification appear                                                                 |
-| onClose           | function          | Called when the notification disappear                                                              |
-| autoClose         | bool \| number    | Delay in ms to close the toast. If set to false, the notification needs to be closed manually       |
-| closeButton       | ReactNode \| bool | A React Component to replace the default close button or `false` to hide the button                 |
-| transition        | ReactNode         | A reference to a valid react-transition-group/Transition component                                  |
-| hideProgressBar   | bool              | Display or not the progress bar below the toast(remaining time)                                     |
-| pauseOnHover      | bool              | Keep the timer running or not on hover                                                              |
-| pauseOnFocusLoss  | bool              | Pause the timer when the window loses focus                                                         |
-| closeOnClick      | bool              | Dismiss toast on click                                                                              |
-| className         | string            | Add optional classes to the container                                                               |
-| bodyClassName     | string            | Add optional classes to the TransitionGroup container                                               |
-| style             | object            | Add optional inline style to the container                                                          |
-| progressClassName | string            | Add optional classes to the progress bar                                                            |
-| progressStyle     | object            | Add optional inline style to the progress bar                                                       |
-| draggable         | bool              | Allow toast to be draggable                                                                         |
-| draggablePercent  | number            | The percentage of the toast's width it takes for a drag to dismiss a toast(value between 0 and 100) |
-| draggableDirection   | "x" \| "y"        | x         | Specify the drag direction.                                                                                 |
-| containerId       | string \| number  | Used to match a specific Toast container                                                            |
-| role              | string            | Define the ARIA role for the toasts                                                                 |
-| delay             | number            | Let you delay the toast appearance. Pass a value in ms                                              |
-| onClick           | function          | Called when click inside Toast notification                                                         |
-| render            | ReactNode         | Only available when using `toast.update`                                                            |
+| Options            | Type              | Description                                                                                         |
+|--------------------|-------------------|-----------------------------------------------------------------------------------------------------|
+| type               | string            | One of info, success, warning, error                                                                |
+| position           | string            | One of top-right, top-center, top-left, bottom-right, bottom-center, bottom-left                    |
+| onOpen             | function          | Called when the notification appear                                                                 |
+| onClose            | function          | Called when the notification disappear                                                              |
+| autoClose          | bool \| number    | Delay in ms to close the toast. If set to false, the notification needs to be closed manually       |
+| closeButton        | ReactNode \| bool | A React Component to replace the default close button or `false` to hide the button                 |
+| transition         | ReactNode         | A reference to a valid react-transition-group/Transition component                                  |
+| hideProgressBar    | bool              | Display or not the progress bar below the toast(remaining time)                                     |
+| pauseOnHover       | bool              | Keep the timer running or not on hover                                                              |
+| pauseOnFocusLoss   | bool              | Pause the timer when the window loses focus                                                         |
+| closeOnClick       | bool              | Dismiss toast on click                                                                              |
+| className          | string            | Add optional classes to the container                                                               |
+| bodyClassName      | string            | Add optional classes to the TransitionGroup container                                               |
+| style              | object            | Add optional inline style to the container                                                          |
+| progressClassName  | string            | Add optional classes to the progress bar                                                            |
+| progressStyle      | object            | Add optional inline style to the progress bar                                                       |
+| draggable          | bool              | Allow toast to be draggable                                                                         |
+| draggablePercent   | number            | The percentage of the toast's width it takes for a drag to dismiss a toast(value between 0 and 100) |
+| draggableDirection | "x" \| "y"        | Specify the drag direction. Default is `x`                                                          |
+| containerId        | string \| number  | Used to match a specific Toast container                                                            |
+| role               | string            | Define the ARIA role for the toasts                                                                 |
+| delay              | number            | Let you delay the toast appearance. Pass a value in ms                                              |
+| onClick            | function          | Called when click inside Toast notification                                                         |
+| render             | ReactNode         | Only available when using `toast.update`                                                            |
+| data               | any               | any additional data you want to pass `toast("hello", { data: {key: value} })`                       |
 
 
 ## Usages
@@ -94,12 +95,5 @@ toast.clearWaitingQueue({ containerId: "anId" });
 
 // completes the controlled progress bar
 toast.done(toastId);
-
-// configure a lazy container
-toast.configure({
-  autoClose: 8000,
-  draggable: false,
-  //same as ToastContainer props
-})
 ```
 
