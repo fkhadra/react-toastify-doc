@@ -24,8 +24,8 @@ unsubscribe();
 
 ```tsx
 export interface ToastItem<Data = {}> {
-    content: React.ReactNode;
     id: Id;
+    content: React.ReactNode;
     theme?: Theme;
     type?: TypeOptions;
     isLoading?: boolean;

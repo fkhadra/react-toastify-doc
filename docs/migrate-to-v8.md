@@ -1,7 +1,7 @@
 ---
 id: 'migration-v8'
 title: 'Migrate to v8'
-sidebar_label: '🚀 Migrate to v8'
+sidebar_label: 'Migrate to v8'
 ---
 
 React-toastify has been around for 5 years(will turn five the 8 November 🎂). Since the beginning, one of the goals was to provide a library that is highly customizable and also able to work out of the box. Every major release introduces breaking changes but this is for the best 👌.

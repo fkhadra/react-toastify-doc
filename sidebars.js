@@ -3,6 +3,7 @@ module.exports = {
     ["Getting Started"]: [
       "introduction",
       "installation",
+      "migration-v9",
       "migration-v8",
       "release-notes",
     ],
