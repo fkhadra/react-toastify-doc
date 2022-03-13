@@ -1,7 +1,7 @@
 ---
 id: use-notification-center
-title: useNotificationCenter (v9)
-sidebar_label: useNotificationCenter (v9)
+title: useNotificationCenter
+sidebar_label: useNotificationCenter
 ---
 
 
