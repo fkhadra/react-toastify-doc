@@ -28,7 +28,7 @@ module.exports = {
     announcementBar: {
       id: "sponsor", // Any value that will identify this message
       content:
-        'Hey you like my work? Consider <a target="_blank" rel="noopener noreferrer" href="https://github.com/sponsors/fkhadra">sponsoring</a> me',
+        'Hey you like my work? Consider <a target="_blank" rel="noopener noreferrer" href="https://voices.org.ua/en/donat/">helping Ukraine 🇺🇦</a>',
     },
     algolia: {
       apiKey: "f54fc6c27b73c67cf37ad6f02753423b",
