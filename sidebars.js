@@ -31,7 +31,7 @@ module.exports = {
       "drag-to-remove",
       "enable-right-to-left-support",
       "accessibility",
-      "lazy-container-and-multi-container",
+      "multi-containers",
       "how-to-style",
       "dispatch-toast-outside-of-react-component",
     ],

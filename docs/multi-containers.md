@@ -1,48 +1,13 @@
 ---
-id: 'lazy-container-and-multi-container'
-title: 'Lazy container and multi-container'
-sidebar_label: 'Lazy container and multi-container'
+id: 'multi-containers'
+title: 'Multi containers'
+sidebar_label: 'Multi containers'
 ---
 
-## Lazy ToastContainer
+## Multi containers support
 
-```js
-  import React, { Component } from 'react';
-  import { toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
-
-  // Call it once in your app. At the root of your app is the best place
-  toast.configure()
-
-  const App = () => {
-    const notify = () => toast("Wow so easy !");
-    
-    return <button onClick={notify}>Notify !</button>;
-  }
-```
-
-The library will mount a `ToastContainer` for you if none is mounted. 
-
-
-### Configure the ToastContainer when it is mounted on demand
-
-The configure function accepts the same props as the ToastContainer. As soon as the container is
-rendered, the call to configure will have no effect.
-
-```js
-toast.configure({
-  autoClose: 8000,
-  draggable: false,
-  //etc you get the idea
-});
-```
-
-
-## Multi container support
-
-To enable multiple container support, you have to pass `enableMultiContainer` and specify a `containerId` and use it in
+To enable multiple containers support, you have to pass `enableMultiContainer` and specify a `containerId` and use it in
 each toast, to do so add `containerId` to the toast's options object.
-
 
 
 Note: adding `enableMultiContainer` prop to the `<ToastContainer/ >` will:
