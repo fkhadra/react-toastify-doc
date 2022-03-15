@@ -12,6 +12,7 @@ sidebar_label: toast
 
 | Options            | Type              | Description                                                                                         |
 |--------------------|-------------------|-----------------------------------------------------------------------------------------------------|
+| toastId            | string \| number  | Provide a custom id                                                                                 |
 | type               | string            | One of info, success, warning, error                                                                |
 | position           | string            | One of top-right, top-center, top-left, bottom-right, bottom-center, bottom-left                    |
 | onOpen             | function          | Called when the notification appear                                                                 |
