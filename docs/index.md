@@ -55,7 +55,7 @@ You can also find me on [reactiflux](https://www.reactiflux.com/). My pseudo is 
 
 ### Code Contributors
 
-This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
+This project exists thanks to all the people who contribute. [[Contribute](https://github.com/fkhadra/react-toastify/blob/master/CONTRIBUTING.md)].
 <a href="https://github.com/fkhadra/react-toastify/graphs/contributors"><img src="https://opencollective.com/react-toastify/contributors.svg?width=890&button=false" /></a>
 
 ### Financial Contributors
