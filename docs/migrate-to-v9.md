@@ -8,7 +8,7 @@ sidebar_label: '🚀 Migrate to v9'
 
 Say hello to addons! What are addons? So, addons are like DLCs in video games but for react-toastify 😆. More seriously, you can think of it as utilities built around react-toastify. For example, custom theme, hooks, components etc...
 
-The first addon that I would like to introduce is the `useNotificationCenter` headless hook! As the name suggest, it let you build your notification center on top of react-toastify. See for yourself 👇
+The first addon that I would like to introduce is the `useNotificationCenter` headless hook! As the name suggests, it let you build your notification center on top of react-toastify. See for yourself 👇
 
 <iframe src="https://codesandbox.io/embed/notification-center-framer-vddoj5?fontsize=14&hidenavigation=1&theme=dark"
      style={
@@ -94,7 +94,7 @@ const unsubscribe = toast.onChange((payload: ToastItem) => {
 });
 ```
 
-For example, if I want to log something everytime there is a new error notification, with the new API it's trivial
+For example, if I want to log something every time there is a new error notification, with the new API it's trivial
 
 ```tsx
 toast.onChange(payload => {
