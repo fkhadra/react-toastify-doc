@@ -124,6 +124,7 @@ export const Options: React.FC<OptionsProps> = ({
             id="limit"
             value={limit}
             onChange={handleInput}
+            min={0}
           />
         </label>
       </div>
