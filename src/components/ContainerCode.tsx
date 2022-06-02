@@ -35,7 +35,6 @@ export const ContainerCode: React.FC<ContainerCodeProps> = ({
   draggable,
   theme = "light",
 }) => {
-  console.log({theme});
   
   return(
 
