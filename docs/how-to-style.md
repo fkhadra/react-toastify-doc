@@ -97,7 +97,7 @@ If overriding the css variables is not enough for you, you can override the exis
 .Toastify__toast-icon {
 }
 
-/** handle the notificaiton color and the text color based on the theme **/
+/** handle the notification color and the text color based on the theme **/
 .Toastify__toast-theme--dark {
 }
 .Toastify__toast-theme--light {
