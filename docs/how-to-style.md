@@ -1,7 +1,7 @@
 ---
-id: 'how-to-style'
-title: 'How to style'
-sidebar_label: 'How to style'
+id: "how-to-style"
+title: "How to style"
+sidebar_label: "How to style"
 ---
 
 ## Override css variables
@@ -60,7 +60,6 @@ Below the list of the css variables that are exposed by the library. You can acc
   --toastify-color-progress-warning: var(--toastify-color-warning);
   --toastify-color-progress-error: var(--toastify-color-error);
 }
-
 ```
 
 ## Override existing css classes
@@ -131,7 +130,10 @@ If overriding the css variables is not enough for you, you can override the exis
 .Toastify__progress-bar--error {
 }
 /** colored notifications share the same progress bar color **/
-.Toastify__progress-bar-theme--colored.Toastify__progress-bar--info, .Toastify__progress-bar-theme--colored.Toastify__progress-bar--success, .Toastify__progress-bar-theme--colored.Toastify__progress-bar--warning, .Toastify__progress-bar-theme--colored.Toastify__progress-bar--error {
+.Toastify__progress-bar-theme--colored.Toastify__progress-bar--info,
+.Toastify__progress-bar-theme--colored.Toastify__progress-bar--success,
+.Toastify__progress-bar-theme--colored.Toastify__progress-bar--warning,
+.Toastify__progress-bar-theme--colored.Toastify__progress-bar--error {
 }
 
 /** Classes for the close button. Better use your own closeButton **/
@@ -141,14 +143,14 @@ If overriding the css variables is not enough for you, you can override the exis
 }
 .Toastify__close-button > svg {
 }
-.Toastify__close-button:hover, .Toastify__close-button:focus {
+.Toastify__close-button:hover,
+.Toastify__close-button:focus {
 }
-
 ```
 
 ## Build your own style using the scss files
 
-Grab the [scss directory](https://github.com/fkhadra/react-toastify/tree/master/scss) of the repository and build your own stylesheet. If you just want to changes some colors most of them are defined inside the `_variables.scss` file.
+Grab the [scss directory](https://github.com/fkhadra/react-toastify/tree/master/scss) of the repository and build your own stylesheet. If you just want to change some colors, most of them are defined inside the `_variables.scss` file.
 
 ```
 scss
@@ -167,7 +169,7 @@ scss
 ```
 
 :::info Info
-  You built an amazing theme and you want to share it with the community, please let me know. Contributions are welcome!
+You built an amazing theme and you want to share it with the community, please let me know. Contributions are welcome!
 :::
 
 ## Passing css classes to component
@@ -192,10 +194,10 @@ When displaying a notification you can also set some css classes:
 - style: inline style applied to the toast
 
 ```jsx
-toast("Custom style",{
-  className: 'black-background',
+toast("Custom style", {
+  className: "black-background",
   bodyClassName: "grow-font-size",
-  progressClassName: 'fancy-progress-bar'
+  progressClassName: "fancy-progress-bar",
 });
 ```
 
@@ -217,7 +219,7 @@ const App = ()=> {
   return (
    <Main />
    <ToastContainer
-      toastClassName={({ type }) => contextClass[type || "default"] + 
+      toastClassName={({ type }) => contextClass[type || "default"] +
         " relative flex p-1 min-h-10 rounded-md justify-between overflow-hidden cursor-pointer"
       }
       bodyClassName={() => "text-sm font-white font-med block p-3"}
@@ -235,33 +237,36 @@ const App = ()=> {
 You can override the css classes with `styled-components`. You can find the list of the css classes used [here](react-toastify/how-to-style#override-existing-css-classes). This is where you will also define the style for your notification.
 
 ```jsx
-import React from 'react';
-import styled from 'styled-components';
-import { ToastContainer } from 'react-toastify';
+import React from "react";
+import styled from "styled-components";
+import { ToastContainer } from "react-toastify";
 
 const StyledContainer = styled(ToastContainer)`
   // https://styled-components.com/docs/faqs#how-can-i-override-styles-with-higher-specificity
-  &&&.Toastify__toast-container {}
-  .Toastify__toast {}
-  .Toastify__toast-body {}
-  .Toastify__progress-bar {}
+  &&&.Toastify__toast-container {
+  }
+  .Toastify__toast {
+  }
+  .Toastify__toast-body {
+  }
+  .Toastify__progress-bar {
+  }
 `;
-
 ```
 
-### Pass css classes to props 
+### Pass css classes to props
 
 ```jsx
 const StyledToastContainer = styled(ToastContainer).attrs({
-  className: 'toast-container',
-  toastClassName: 'toast',
-  bodyClassName: 'body',
-  progressClassName: 'progress',
+  className: "toast-container",
+  toastClassName: "toast",
+  bodyClassName: "body",
+  progressClassName: "progress",
 })`
   /* .toast-container */
   width: 100%;
 
-   /* .toast is passed to toastClassName */
+  /* .toast is passed to toastClassName */
   .toast {
     background-color: var(--color-black);
   }
@@ -271,10 +276,12 @@ const StyledToastContainer = styled(ToastContainer).attrs({
   }
 
   /* .body is passed to bodyClassName */
-  .body {}
+  .body {
+  }
 
   /* .progress is passed to progressClassName */
-  .progress {}
+  .progress {
+  }
 `;
 ```
 
@@ -283,7 +290,7 @@ const StyledToastContainer = styled(ToastContainer).attrs({
 If you want to style from scratch simply include the bare minimum style and you are good to go.
 
 ```jsx
-import 'react-toastify/dist/ReactToastify.minimal.css';
+import "react-toastify/dist/ReactToastify.minimal.css";
 ```
 
 ## Inject style on demand
