@@ -8,9 +8,11 @@ sidebar_label: '🚀 Migrate to v9'
 
 Say hello to addons! What are addons? So, addons are like DLCs in video games but for react-toastify 😆. More seriously, you can think of it as utilities built around react-toastify. For example, custom theme, hooks, components etc...
 
+### useNotificationCenter
+
 The first addon that I would like to introduce is the `useNotificationCenter` headless hook! As the name suggests, it let you build your notification center on top of react-toastify. See for yourself 👇
 
-<iframe src="https://codesandbox.io/embed/notification-center-framer-vddoj5?fontsize=14&hidenavigation=1&theme=dark"
+<iframe src="https://codesandbox.io/embed/notification-center-framer-vddoj5?fontsize=14&hidenavigation=1&hidedevtools=1&view=preview&codemirror=1&theme=dark"
      style={
        {
             width:"100%",
@@ -26,7 +28,7 @@ The first addon that I would like to introduce is the `useNotificationCenter` he
 
 Another example using MUI.
 
-<iframe src="https://codesandbox.io/embed/mui-notification-center-zvxod3?fontsize=14&hidenavigation=1&theme=dark"
+<iframe src="https://codesandbox.io/embed/mui-notification-center-zvxod3?fontsize=14&hidenavigation=1&hidedevtools=1&view=preview&codemirror=1&theme=dark"
      style={
        {
             width:"100%",
@@ -45,6 +47,14 @@ Addons only impact your bundle size if you use them 🎉!
 :::
 
 Check the [documentation](/react-toastify/addons/use-notification-center) for more details. 
+
+### Stacked toasts
+
+This second addon will be released later. There are a bunch of details that I need to cover and I don't want to release something too buggy. Nevertheless, I'm really excited about it and I think it's worth showcasing anyway. 
+
+I call it `StackedContainer` for now, it's an alternative to the `ToastContainer` component.
+
+![stacked-container](https://user-images.githubusercontent.com/5574267/160688000-1d01d949-d9e1-41f4-858c-f5c9a33b901d.gif)
 
 
 ## Breaking changes
@@ -113,4 +123,8 @@ toast.onChange(payload => {
 `toast.configure` works fine for most cases but the current implementation has one main issue. It does not work with react context because it creates a new react tree.
 That being said, having 2 APIs to do the same thing is a bad thing. 
 
-I wanted to make life easier for the consumer but I made a mistake by introducing this API.
+## Bug fixes
+
+- [#725](https://github.com/fkhadra/react-toastify/issues/725) the success toast on promise does not disappear when resolving too quickly
+- [#711](https://github.com/fkhadra/react-toastify/issues/711) updated toast sometimes has wrong styles
+-  [#700](https://github.com/fkhadra/react-toastify/issues/700) generics are not used for toast.promise's result type if you use a custom render method

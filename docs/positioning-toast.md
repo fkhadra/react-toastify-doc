@@ -12,7 +12,9 @@ For convenience, `toast` exposes a POSITION property to avoid any typos.
 
 ```jsx
   import React from 'react';
-  import { toast } from 'react-toastify';
+  import { toast, ToastContainer } from 'react-toastify';
+  import "react-toastify/dist/ReactToastify.css";
+
 
   function Example() {
     const notify = () => {
@@ -40,6 +42,11 @@ For convenience, `toast` exposes a POSITION property to avoid any typos.
       });
     };
 
-    return <button onClick={notify}>Notify</button>;
+     return (
+        <>
+          <button onClick={notify}>Notify</button>;
+          <ToastContainer />
+        </>
+      );
   }
 ```

@@ -34,7 +34,9 @@ export const ContainerCode: React.FC<ContainerCodeProps> = ({
   isDefaultProps,
   draggable,
   limit,
-}) => (
+  theme = "light",
+}) => {
+  return(
   <div>
     <h3>Toast Container</h3>
     <Code>
@@ -63,6 +65,11 @@ export const ContainerCode: React.FC<ContainerCodeProps> = ({
       {getProp("pauseOnFocusLoss", pauseOnFocusLoss)}
       {getProp("draggable", draggable)}
       {!disableAutoClose ? getProp("pauseOnHover", pauseOnHover) : ""}
+
+      <div>
+        <Element kind={1}>theme</Element>
+        {`="${theme}"`}
+      </div>
       <div>
         <span>{`/>`}</span>
       </div>
@@ -71,9 +78,9 @@ export const ContainerCode: React.FC<ContainerCodeProps> = ({
           <div>{`{/* Same as */}`}</div>
           <span>{`<`}</span>
           <Element kind={0}>ToastContainer</Element>
-          <span> /></span>
+          <span> {`/>`}</span>
         </div>
       )}
     </Code>
   </div>
-);
+)};

@@ -37,6 +37,7 @@ sidebar_label: toast
 | delay              | number            | Let you delay the toast appearance. Pass a value in ms                                              |
 | onClick            | function          | Called when click inside Toast notification                                                         |
 | render             | ReactNode         | Only available when using `toast.update`                                                            |
+| isLoading          | bool              | Only available when using `toast.loading'                                                           |
 | data               | any               | any additional data you want to pass `toast("hello", { data: {key: value} })`                       |
 
 

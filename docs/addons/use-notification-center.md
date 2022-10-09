@@ -11,7 +11,7 @@ It offers a lot of flexibility out of the box like `sorting`, `filtering`, etc..
 
 Check the example below.
 
-<iframe src="https://codesandbox.io/embed/notification-center-framer-vddoj5?fontsize=14&hidenavigation=1&theme=dark"
+<iframe src="https://codesandbox.io/embed/notification-center-framer-vddoj5?fontsize=14&hidenavigation=1&hidedevtools=1&view=preview&codemirror=1&theme=dark"
      style={
        {
             width:"100%",
@@ -27,7 +27,7 @@ Check the example below.
 
 Another example using MUI.
 
-<iframe src="https://codesandbox.io/embed/mui-notification-center-zvxod3?fontsize=14&hidenavigation=1&theme=dark"
+<iframe src="https://codesandbox.io/embed/mui-notification-center-zvxod3?fontsize=14&hidenavigation=1&hidedevtools=1&view=preview&codemirror=1&theme=dark"
      style={
        {
             width:"100%",
