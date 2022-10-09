@@ -33,11 +33,10 @@ export const ContainerCode: React.FC<ContainerCodeProps> = ({
   pauseOnFocusLoss,
   isDefaultProps,
   draggable,
+  limit,
   theme = "light",
 }) => {
-  
   return(
-
   <div>
     <h3>Toast Container</h3>
     <Code>
@@ -53,6 +52,12 @@ export const ContainerCode: React.FC<ContainerCodeProps> = ({
         <Element kind={1}>autoClose</Element>
         {`={${disableAutoClose ? false : autoClose}}`}
       </div>
+      {limit > 0 && (
+        <div>
+          <Element kind={1}>limit</Element>
+          {`={${limit}}`}
+        </div>
+      )}
       {!disableAutoClose ? getProp("hideProgressBar", hideProgressBar) : ""}
       {getProp("newestOnTop", newestOnTop)}
       {getProp("closeOnClick", closeOnClick)}

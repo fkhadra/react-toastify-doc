@@ -58,7 +58,8 @@ export function App() {
       state.pauseOnHover &&
       state.closeOnClick &&
       state.draggable &&
-      state.theme === "light"
+      state.theme === "light" &&
+      state.limit === 0
     );
   };
 
