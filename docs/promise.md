@@ -56,7 +56,7 @@ Displaying a simple message is what you would want to do in 90% of cases. But wh
 ```tsx
 const resolveWithSomeData = new Promise(resolve => setTimeout(() => resolve("world"), 3000));
 toast.promise(
-    resolveAfter3Sec,
+    resolveWithSomeData,
     {
       pending: {
         render(){
