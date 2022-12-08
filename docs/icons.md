@@ -59,5 +59,17 @@ toast.success("Even a function, given you return something that can be rendered"
 });
 ```
 
+You can provide global custom icons through `ToastContainer`.
+
+```tsx
+import { Icons, ToastContainer } from 'react-toastify';
+
+<ToastContainer icon={({theme, type})=> {
+    if(type === 'success') return <CustomSuccessIcon />; // return custom icon for success type
+    if(type === 'error') return Icons.error({theme, type}); // return default toastify icon for error type
+    return <DefaultIcon /> // return default icon or return false for no icon
+}}/>
+```
+
 :::info If you provide a component, the current `theme` and `type` are passed as props
 :::
