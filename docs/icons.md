@@ -67,7 +67,7 @@ import { Icons, ToastContainer } from 'react-toastify';
 <ToastContainer icon={({theme, type})=> {
     if(type === 'success') return <CustomSuccessIcon />; // return custom icon for success type
     if(type === 'error') return Icons.error({theme, type}); // return default toastify icon for error type
-    return <DefaultIcon /> // return default icon or return false for no icon
+    return <DefaultIcon />; // return default icon or return false for no icon
 }}/>
 ```
 
