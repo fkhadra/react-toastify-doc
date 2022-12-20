@@ -27,6 +27,7 @@ const OptionsContainer = styled.div`
     align-items: flex-start;
   }
   & ul {
+    color: "black";
     list-style: none;
     padding: 0;
   }
@@ -94,10 +95,10 @@ export const Options: React.FC<OptionsProps> = ({
             name="transition"
             id="transition"
             onChange={handleInput}
-            value={transition}
-          >
+            value={transition}>
+              
             {Object.keys(transitions).map((k) => (
-              <option key={k} value={k}>
+              <option key={k} value={k} >
                 {k}
               </option>
             ))}
