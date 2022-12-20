@@ -98,7 +98,7 @@ export const Options: React.FC<OptionsProps> = ({
             value={transition}>
               
             {Object.keys(transitions).map((k) => (
-              <option key={k} value={k} >
+              <option key={k} value={k} style={{color : "black"}} >
                 {k}
               </option>
             ))}
