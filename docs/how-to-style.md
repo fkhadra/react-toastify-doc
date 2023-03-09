@@ -293,6 +293,29 @@ If you want to style from scratch simply include the bare minimum style and you 
 import "react-toastify/dist/ReactToastify.minimal.css";
 ```
 
+## Individually stying toasts by ID
+If you don't want a global style with ToastContainer you can try the following. 
+In your custom toast make sure to provide a ToastId
+
+```
+export const MyCustomToast = () => {
+return toast(MyCustomContentDiv, {
+// your custom options
+toastId: MyCustomToastId
+}
+}
+
+// sample that will change the styling just for this toast id in the icon area. This css class is imported in the file where the custom toast is used.
+div#MyCustomToastId .Toastify__toast-icon {
+    width: 60px;
+    background: #00BF91;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+```
+
 ## Inject style on demand
 
 If you don't have a css loader or you want to inject the style on demand(convenient with css module), the library provide a helper for that
