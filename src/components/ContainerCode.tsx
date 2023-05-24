@@ -1,4 +1,5 @@
 import React from "react";
+import { selectedTransitions } from "../utils";
 
 import { PlaygroundState } from "./App";
 
@@ -35,6 +36,7 @@ export const ContainerCode: React.FC<ContainerCodeProps> = ({
   draggable,
   limit,
   theme = "light",
+  transition,
 }) => {
   return(
   <div>
@@ -65,10 +67,13 @@ export const ContainerCode: React.FC<ContainerCodeProps> = ({
       {getProp("pauseOnFocusLoss", pauseOnFocusLoss)}
       {getProp("draggable", draggable)}
       {!disableAutoClose ? getProp("pauseOnHover", pauseOnHover) : ""}
-
       <div>
         <Element kind={1}>theme</Element>
         {`="${theme}"`}
+      </div>
+      <div>
+        <Element kind={1}>transition</Element>
+        {`: ${selectedTransitions[transition]}`},
       </div>
       <div>
         <span>{`/>`}</span>

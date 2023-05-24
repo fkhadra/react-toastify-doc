@@ -1,4 +1,5 @@
 import React from "react";
+import { selectedTransitions } from "../utils";
 import { PlaygroundState } from "./App";
 
 import { Code, Element } from "./Code.styles";
@@ -31,7 +32,8 @@ export const ToastCode: React.FC<PlaygroundState> = ({
   type,
   draggable,
   progress,
-  theme
+  theme,
+  transition
 }) => (
   <div>
     <h3>Toast Emitter</h3>
@@ -73,6 +75,10 @@ export const ToastCode: React.FC<PlaygroundState> = ({
       <div>
         <Element kind={1}>theme</Element>
         {`: "${theme}"`},
+      </div>
+      <div>
+        <Element kind={1}>transition</Element>
+        {`: ${selectedTransitions[transition]}`},
       </div>
       <div>{`});`}</div>
     </Code>
