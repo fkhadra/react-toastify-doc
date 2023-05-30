@@ -22,6 +22,7 @@ export const RadioList: React.FC<RadioProps> = ({
       return (
         <Radio
           id={option}
+          key={option}
           name={name}
           onChange={onChange}
           checked={option === checked}
