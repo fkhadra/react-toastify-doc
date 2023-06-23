@@ -59,7 +59,8 @@ export function App() {
       state.closeOnClick &&
       state.draggable &&
       state.theme === "light" &&
-      state.limit === 0
+      state.limit === 0 &&
+      state.transition === 'bounce'
     );
   };
 

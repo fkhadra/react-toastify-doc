@@ -41,3 +41,10 @@ export const transitions = {
   zoom: Zoom,
   flip: Flip,
 };
+
+export const selectedTransitions = {
+  bounce: "Bounce",
+  slide: "Slide",
+  zoom: "Zoom",
+  flip: "Flip",
+};
