@@ -215,19 +215,22 @@ const contextClass = {
   dark: "bg-white-600 font-gray-300",
 };
 
-const App = ()=> {
+const App = () => {
   return (
-   <Main />
-   <ToastContainer
-      toastClassName={({ type }) => contextClass[type || "default"] +
-        " relative flex p-1 min-h-10 rounded-md justify-between overflow-hidden cursor-pointer"
-      }
-      bodyClassName={() => "text-sm font-white font-med block p-3"}
-      position="bottom-left"
-      autoClose={3000}
-    />
-  )
-}
+    <>
+      <Main />
+      <ToastContainer
+        toastClassName={(context) =>
+          contextClass[context?.type || "default"] +
+          " relative flex p-1 min-h-10 rounded-md justify-between overflow-hidden cursor-pointer"
+        }
+        bodyClassName={() => "text-sm font-white font-med block p-3"}
+        position="bottom-left"
+        autoClose={3000}
+      />
+    </>
+  );
+};
 ```
 
 ## How to style with styled-components
