@@ -132,3 +132,39 @@ function Example(){
   );
 }
 ```
+
+# Updating a Toast with your custom options Example
+```const failedOptions = {
+  position: "bottom-left",
+  autoClose: 5000,
+  closeButton: true,
+  hideProgressBar: false,
+  closeOnClick: false,
+  pauseOnHover: true,
+  draggable: false,
+  progress: undefined,
+  theme: "light",
+  toastId: 'ToastFailed',
+  icon: <Icon
+    size="lg"
+    color='white'
+    icon={<AlertIcon />}
+  />,
+  style: {
+    width: 500,
+    border: `2px solid ${COLORS.red}`
+  },
+}
+
+const FailedMessage = () => (
+  <div>
+    your message and html here
+  </div>
+)
+    setTimeout(() => {
+      toast.update(toastId.current, {
+        render: FailedMessage,
+        ...failedOptions
+      })
+    }, 3000);
+    ```
