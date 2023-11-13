@@ -48,7 +48,7 @@ toast(({ closeToast }) => <div>Functional swag 😎</div>);
 ## Custom implementation example (TS)
 
 ```tsx
-export const Msg = ({ title, text }: Props): JSX.Element => {
+export const Msg = ({ title, text }) => {
   return (
     <div className="msg-container">
       <p className="msg-title">{title}</p>
@@ -57,13 +57,22 @@ export const Msg = ({ title, text }: Props): JSX.Element => {
   );
 };
 
-const notify = (myProps: Props, toastProps?: ToastContainerProps): Id =>
+const toaster = (myProps, toastProps): Id =>
   toast(<Msg {...myProps} />, { ...toastProps });
 
-notify.success = (myProps: Props, toastProps?: ToastContainerProps): Id =>
+toaster.success = (myProps, toastProps): Id =>
   toast.success(<Msg {...myProps} />, { ...toastProps });
 
 // ...the other notification types
+
+// use it
+toaster.success(
+  {
+    title: "You did it!",
+    text: "Good job!",
+  },
+  { autoClose: false }
+);
 ```
 
 ## Example with react context 🚀
