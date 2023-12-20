@@ -1,8 +1,11 @@
-module.exports = {
+import type { SidebarsConfig } from "@docusaurus/plugin-content-docs";
+
+const sidebars: SidebarsConfig = {
   someSidebar: {
     ["Getting Started"]: [
       "introduction",
       "installation",
+      "migration-v10",
       "migration-v9",
       "migration-v8",
       "release-notes",
@@ -46,3 +49,5 @@ module.exports = {
     ],
   },
 };
+
+export default sidebars;

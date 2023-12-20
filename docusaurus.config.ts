@@ -1,19 +1,29 @@
-module.exports = {
+import { themes as prismThemes } from "prism-react-renderer";
+import type { Config } from "@docusaurus/types";
+import type * as Preset from "@docusaurus/preset-classic";
+
+const config: Config = {
   title: "React-Toastify",
   tagline: "React notification made easy !",
   url: "https://fkhadra.github.io/",
+
   baseUrl: "/react-toastify/",
   favicon: "img/favicon.ico",
   organizationName: "fkhadra",
   projectName: "react-toastify",
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en"],
+  },
+
   themeConfig: {
     prism: {
-      theme: require("prism-react-renderer/themes/github"),
-      darkTheme: require("prism-react-renderer/themes/dracula"),
+      theme: prismThemes.github,
+      darkTheme: prismThemes.dracula,
     },
     navbar: {
       title: "React-Toastify",
-      links: [
+      items: [
         {
           to: "https://github.com/fkhadra/react-toastify",
           label: "GitHub",
@@ -31,24 +41,27 @@ module.exports = {
         'Hey you like my work? Consider <a target="_blank" rel="noopener noreferrer" href="https://voices.org.ua/en/donat/">helping Ukraine 🇺🇦</a>',
     },
     algolia: {
-      apiKey: "f54fc6c27b73c67cf37ad6f02753423b",
+      appId: "XKWJI2MIYA",
+      apiKey: "d6103ea15850ba5ac898d24750de42b8",
       indexName: "react-toastify",
       algoliaOptions: {}, // Optional, if provided by Algolia
     },
   },
   presets: [
     [
-      "@docusaurus/preset-classic",
+      "classic",
       {
         docs: {
-          routeBasePath: "",
-          sidebarPath: require.resolve("./sidebars.js"),
+          routeBasePath: "/",
+          sidebarPath: "./sidebars.ts",
           editUrl: "https://github.com/fkhadra/react-toastify-doc/edit/master/",
         },
         theme: {
-          customCss: require.resolve("./src/css/custom.css"),
+          customCss: "./src/css/custom.css",
         },
       },
     ],
   ],
 };
+
+export default config;
