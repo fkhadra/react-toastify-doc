@@ -11,7 +11,6 @@ When you update a toast, the toast options and the content are inherited but don
 ## Basic example
 
 ```jsx
-import React from 'react';
 import { toast } from 'react-toastify';
 
 function Example() {

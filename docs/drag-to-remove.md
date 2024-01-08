@@ -4,7 +4,7 @@ title: 'Drag to remove'
 sidebar_label: 'Drag to remove'
 ---
 
-You can drag the toast to remove it:
+You can drag the toast to remove it. By default, the notifications are only draggable on touch devices.
 
 ![drag](https://user-images.githubusercontent.com/5574267/38770523-9438ff7c-4014-11e8-93a5-acd7dbdae52b.gif)
 
@@ -26,21 +26,55 @@ toast('Hello', {
 });
 ```
 
+## Enable only on desktop
+
+- Gloablly
+
+```jsx
+<ToastContainer draggable="mouse" />
+```
+
+- Per toast:
+
+```jsx
+toast('Hello', {
+  draggable: "mouse"
+});
+```
+
+## Enable on all devices
+
+- Gloablly
+
+```jsx
+<ToastContainer draggable />
+```
+
+- per toast:
+
+```jsx
+toast('Hello', {
+  draggable: true
+});
+```
+
+
 ## Disable it
 
-- Disable by default for all toast:
+- Globally
 
 ```jsx
 <ToastContainer draggable={false} />
 ```
 
-- Disable per toast:
+- Per toast:
 
 ```jsx
 toast('Hello', {
   draggable: false
 });
 ```
+
 
 ## Drag vertically
 

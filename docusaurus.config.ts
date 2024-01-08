@@ -1,6 +1,5 @@
-import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
-import type * as Preset from "@docusaurus/preset-classic";
+import { themes as prismThemes } from "prism-react-renderer";
 
 const config: Config = {
   title: "React-Toastify",
@@ -42,7 +41,7 @@ const config: Config = {
     },
     algolia: {
       appId: "XKWJI2MIYA",
-      apiKey: "d6103ea15850ba5ac898d24750de42b8",
+      apiKey: "5a5863b918b99240e7cda0faadccd3ea",
       indexName: "react-toastify",
       algoliaOptions: {}, // Optional, if provided by Algolia
     },

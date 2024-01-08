@@ -34,9 +34,11 @@ const sidebars: SidebarsConfig = {
       "drag-to-remove",
       "enable-right-to-left-support",
       "accessibility",
+      "stacked",
       "multi-containers",
       "how-to-style",
       "dispatch-toast-outside-of-react-component",
+      "timer",
     ],
     Addons: ["addons/use-notification-center"],
     ["API Reference"]: [
@@ -44,8 +46,6 @@ const sidebars: SidebarsConfig = {
       "api/toast",
       "api/css-transition",
       "api/collapse-toast",
-      "api/use-toast-container",
-      "api/use-toast",
     ],
   },
 };

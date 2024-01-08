@@ -59,6 +59,9 @@ Below the list of the css variables that are exposed by the library. You can acc
   --toastify-color-progress-success: var(--toastify-color-success);
   --toastify-color-progress-warning: var(--toastify-color-warning);
   --toastify-color-progress-error: var(--toastify-color-error);
+
+  // used to control the opacity of the progress trail
+  --toastify-color-progress-bgo: .2;
 }
 ```
 

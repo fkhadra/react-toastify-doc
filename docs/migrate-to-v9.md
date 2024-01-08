@@ -1,7 +1,7 @@
 ---
 id: 'migration-v9'
 title: 'Migrate to v9'
-sidebar_label: '🚀 Migrate to v9'
+sidebar_label: 'Migrate to v9'
 ---
 
 ## What is new in v9

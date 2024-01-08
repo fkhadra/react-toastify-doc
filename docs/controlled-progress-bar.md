@@ -7,7 +7,6 @@ sidebar_label: 'Use a controlled progress bar'
 Imagine you want to see the progress of a file upload. The example below features [axios](https://github.com/axios/axios), but it works with anything!
 
 ```jsx
-import React from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 

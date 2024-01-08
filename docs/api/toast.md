@@ -54,7 +54,7 @@ const options = {
     closeButton: FontAwesomeCloseButton,
     type: toast.TYPE.INFO,
     hideProgressBar: false,
-    position: toast.POSITION.TOP_LEFT,
+    position: "top-left",
     pauseOnHover: true,
     transition: MyCustomTransition,
     progress: 0.2
@@ -79,6 +79,9 @@ toast.dismiss();
 // Remove given toast
 toast.dismiss(toastId); 
 
+// Remove toast that has a given id for a specific container
+toast.dismiss({ id: "123", containerId: "12" })
+
 //Check if a toast is displayed or not
 toast.isActive(toastId); 
 
@@ -97,5 +100,9 @@ toast.clearWaitingQueue({ containerId: "anId" });
 
 // completes the controlled progress bar
 toast.done(toastId);
+
+// play/pause the timer programmatically
+toast.play({ id: "123" });
+toast.pause({ id: "123" });
 ```
 

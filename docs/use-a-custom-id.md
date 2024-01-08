@@ -8,7 +8,6 @@ A custom `toastId` can be used to replace the one generated. You can provide a `
 
 
 ```jsx
-import React from 'react';
 import { toast } from 'react-toastify';
 
 function Example(){
@@ -18,9 +17,5 @@ function Example(){
     });
   }
 
-  return (
-    <div>
-      <button onClick={notify}>Notify</button>
-    </div>
-  );
+  return (<button onClick={notify}>Notify</button>);
 }

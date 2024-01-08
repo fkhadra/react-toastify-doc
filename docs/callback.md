@@ -10,7 +10,6 @@ You can define two callbacks. Their names are self-explanatory:
 - `onClose`
 
 ```jsx
-import React from 'react';
 import { toast } from 'react-toastify';
 
 function Example(){
@@ -30,7 +29,6 @@ function Example(){
   If you use a component, the callback will also have access to the component props
 
 ```jsx
-import React from 'react';
 import { toast } from 'react-toastify';
 
 function Msg({ uid }){

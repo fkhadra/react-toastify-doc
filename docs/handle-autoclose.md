@@ -9,7 +9,6 @@ The `autoClose` prop accept a duration in milliseconds or `false`.
 ## Change the default delay
 
 ```jsx
-import React from 'react';
 import { ToastContainer } from 'react-toastify';
 
 // close toast after 8 seconds
@@ -21,7 +20,6 @@ const App = () => (
 ## Change the delay per toast for more control
 
 ```jsx
-import React from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 
 function Example() {

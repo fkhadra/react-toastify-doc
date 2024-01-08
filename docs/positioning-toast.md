@@ -8,10 +8,7 @@ By default, all the toasts will be positioned on the top right of your browser. 
 
 The following values are allowed: **top-right, top-center, top-left, bottom-right, bottom-center, bottom-left**
 
-For convenience, `toast` exposes a POSITION property to avoid any typos.
-
 ```jsx
-  import React from 'react';
   import { toast, ToastContainer } from 'react-toastify';
   import "react-toastify/dist/ReactToastify.css";
 
@@ -21,23 +18,23 @@ For convenience, `toast` exposes a POSITION property to avoid any typos.
       toast("Default Notification !");
 
       toast.success("Success Notification !", {
-        position: toast.POSITION.TOP_CENTER
+        position: "top-center"
       });
 
       toast.error("Error Notification !", {
-        position: toast.POSITION.TOP_LEFT
+        position: "top-left"
       });
 
       toast.warn("Warning Notification !", {
-        position: toast.POSITION.BOTTOM_LEFT
+        position: "bottom-left"
       });
 
       toast.info("Info Notification !", {
-        position: toast.POSITION.BOTTOM_CENTER
+        position: "bottom-center"
       });
 
       toast("Custom Style Notification with css class!", {
-        position: toast.POSITION.BOTTOM_RIGHT,
+        position: "bottom-right",
         className: 'foo-bar'
       });
     };

@@ -22,7 +22,6 @@ You can pass a custom close button to the `ToastContainer` to replace the defaul
 
 
 ```jsx
-  import React from 'react';
   import { toast, ToastContainer } from 'react-toastify';
 
   const CloseButton = ({ closeToast }) => (

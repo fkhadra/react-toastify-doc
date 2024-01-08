@@ -1,7 +1,7 @@
 ---
 id: "render-what-you-want"
-title: "Render more than string"
-sidebar_label: "Render more than string"
+title: "Render anything"
+sidebar_label: "Render Anything"
 ---
 
 You can render any valid `ReactNode`: string, number, component... This is really straightforward.

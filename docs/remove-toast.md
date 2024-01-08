@@ -32,3 +32,13 @@ function Example(){
   );
 }
 ```
+## Remove notification from a given container
+
+- Remove all toasts that belongs to a given container
+```tsx
+toast.dismiss({ container: "123" })
+```
+- Remove toast that has a given id for a specific container
+```tsx
+toast.dismiss({ id: "123", containerId: "12" })
+```
