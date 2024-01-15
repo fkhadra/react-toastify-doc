@@ -41,7 +41,7 @@ const config: Config = {
     },
     algolia: {
       appId: "XKWJI2MIYA",
-      apiKey: "d6103ea15850ba5ac898d24750de42b8",
+      apiKey: "5a5863b918b99240e7cda0faadccd3ea",
       indexName: "react-toastify",
       algoliaOptions: {}, // Optional, if provided by Algolia
     },
