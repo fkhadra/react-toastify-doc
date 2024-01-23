@@ -6,7 +6,7 @@ sidebar_label: Installation
 
 ## Requirements
 
-- [React](https://reactjs.org) version >= 16.8 or above 
+- [React](https://reactjs.org) version >= 18 or above 
 
 ## Installation
 
