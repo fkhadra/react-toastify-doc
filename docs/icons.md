@@ -34,7 +34,7 @@ toast.error("Without icon", {
 });
 ```
 
-- Disable the icon gloabally
+- Disable the icon globally
 ```tsx
 <ToastContainer icon={false} />
 ```
