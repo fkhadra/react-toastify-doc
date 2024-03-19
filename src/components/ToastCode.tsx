@@ -78,7 +78,7 @@ export const ToastCode: React.FC<PlaygroundState> = ({
       </div>
       <div>
         <Element kind={1}>transition</Element>
-        {`: ${selectedTransitions[transition]}`},
+        {`: ${selectedTransitions[transition]}`}
       </div>
       <div>{`});`}</div>
     </Code>
