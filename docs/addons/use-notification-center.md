@@ -44,13 +44,13 @@ Another example using MUI.
 ## Import
 
 ```tsx
-import { useNotificationCenter } from "react-toastify/addons/useNotificationCenter"
+import { useNotificationCenter } from "react-toastify/addons/use-notification-center"
 ```
 
 ## Initial parameters
 
 ```tsx
-import { useNotificationCenter } from "react-toastify/addons/useNotificationCenter"
+import { useNotificationCenter } from "react-toastify/addons/use-notification-center"
 
 interface Data {
   exclude: boolean
@@ -86,7 +86,7 @@ function App(){
 The hook gives you access to several values and functions. Let's view them one by one.
 
 ```tsx
-import { useNotificationCenter } from "react-toastify/addons/useNotificationCenter"
+import { useNotificationCenter } from "react-toastify/addons/use-notification-center"
 
 const {
     notifications,
@@ -124,7 +124,7 @@ interface NotificationCenter <Data = {}> {
 Most of the properties are populated when you display a notification on the screen using the `toast` function. A typical usage would look like this.
 
 ```tsx
-import { useNotificationCenter } from "react-toastify/addons/useNotificationCenter"
+import { useNotificationCenter } from "react-toastify/addons/use-notification-center"
 
 function App(){
   const { notifications } = useNotificationCenter()
@@ -149,7 +149,7 @@ The `content` contains the value that is displayed when calling the toast functi
 :::
 
 ```tsx
-import { useNotificationCenter } from "react-toastify/addons/useNotificationCenter"
+import { useNotificationCenter } from "react-toastify/addons/use-notification-center"
 
 interface Data {
   title: string
@@ -187,7 +187,7 @@ function App(){
 Remove all notifications from the notification center.
 
 ```tsx
-import { useNotificationCenter } from "react-toastify/addons/useNotificationCenter"
+import { useNotificationCenter } from "react-toastify/addons/use-notification-center"
 
 function App(){
   const { notifications, clear } = useNotificationCenter()
@@ -207,7 +207,7 @@ function App(){
 Mark all notifications as read.
 
 ```tsx
-import { useNotificationCenter } from "react-toastify/addons/useNotificationCenter"
+import { useNotificationCenter } from "react-toastify/addons/use-notification-center"
 
 function App(){
   const { notifications, markAllAsRead } = useNotificationCenter()
@@ -230,7 +230,7 @@ function App(){
 `markAllAsRead` accepts an optional boolean argument. It's only useful to mark all notifications as not read.
 
 ```tsx
-import { useNotificationCenter } from "react-toastify/addons/useNotificationCenter"
+import { useNotificationCenter } from "react-toastify/addons/use-notification-center"
 
 function App(){
   const { notifications, markAllAsRead } = useNotificationCenter()
@@ -264,7 +264,7 @@ markAllAsRead(read?: boolean): void
 Mark one or more notifications as read.
 
 ```tsx
-import { useNotificationCenter } from "react-toastify/addons/useNotificationCenter"
+import { useNotificationCenter } from "react-toastify/addons/use-notification-center"
 
 function App(){
   const { notifications, markAsRead } = useNotificationCenter()
@@ -302,7 +302,7 @@ markAsRead(["a","list", "of", "id"], false)
 Contains the number of unread notifications.
 
 ```tsx
-import { useNotificationCenter } from "react-toastify/addons/useNotificationCenter"
+import { useNotificationCenter } from "react-toastify/addons/use-notification-center"
 
 function App(){
   const { unreadCount } = useNotificationCenter()
@@ -318,7 +318,7 @@ function App(){
 Remove one or more notifications.
 
 ```tsx
-import { useNotificationCenter } from "react-toastify/addons/useNotificationCenter"
+import { useNotificationCenter } from "react-toastify/addons/use-notification-center"
 
 function App(){
   const { notifications, remove } = useNotificationCenter()
@@ -346,7 +346,7 @@ remove(["a","list", "of", "id"])
 By default, the notifications are sorted from the newest to the oldest using the `createdAt` field. This can be changed anytime and you are free to use whatever field you want.
 
 ```tsx
-import { useNotificationCenter, NotificationCenterItem } from "react-toastify/addons/useNotificationCenter"
+import { useNotificationCenter, NotificationCenterItem } from "react-toastify/addons/use-notification-center"
 
 function App(){
   const { notifications, sort } = useNotificationCenter()
@@ -382,7 +382,7 @@ toast("hello", {
 ```
 
 ```tsx
-import { useNotificationCenter, NotificationCenterItem } from "react-toastify/addons/useNotificationCenter"
+import { useNotificationCenter, NotificationCenterItem } from "react-toastify/addons/use-notification-center"
 
 interface Data {
   order: number
@@ -416,7 +416,7 @@ Let you add a notification without calling `toast`. This can be useful in many c
 
 ```tsx
 import { useEffect } from "react"
-import { useNotificationCenter } from "react-toastify/addons/useNotificationCenter"
+import { useNotificationCenter } from "react-toastify/addons/use-notification-center"
 import { jobListener } from "my-job-listener"
 
 function App(){
@@ -467,7 +467,7 @@ Let you update a notification without calling `toast.update`. This can be useful
 
 ```tsx
 import { useEffect } from "react"
-import { useNotificationCenter } from "react-toastify/addons/useNotificationCenter"
+import { useNotificationCenter } from "react-toastify/addons/use-notification-center"
 import { jobListener } from "my-job-listener"
 
 function App(){
@@ -505,7 +505,7 @@ Let you retrieve one or more notifications. This can be useful in many cases, jo
 
 ```tsx
 import { useEffect } from "react"
-import { useNotificationCenter } from "react-toastify/addons/useNotificationCenter"
+import { useNotificationCenter } from "react-toastify/addons/use-notification-center"
 import { jobListener } from "my-job-listener"
 
 function App(){
