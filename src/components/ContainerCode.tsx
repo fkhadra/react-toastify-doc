@@ -73,7 +73,7 @@ export const ContainerCode: React.FC<ContainerCodeProps> = ({
       </div>
       <div>
         <Element kind={1}>transition</Element>
-        {`: ${selectedTransitions[transition]}`},
+        {`= ${selectedTransitions[transition]}`},
       </div>
       <div>
         <span>{`/>`}</span>
