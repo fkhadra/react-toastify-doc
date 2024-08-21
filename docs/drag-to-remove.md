@@ -28,7 +28,7 @@ toast('Hello', {
 
 ## Enable only on desktop
 
-- Gloablly
+- Globally
 
 ```jsx
 <ToastContainer draggable="mouse" />
@@ -44,7 +44,7 @@ toast('Hello', {
 
 ## Enable on all devices
 
-- Gloablly
+- Globally
 
 ```jsx
 <ToastContainer draggable />
