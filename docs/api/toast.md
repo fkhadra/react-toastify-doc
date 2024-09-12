@@ -52,7 +52,7 @@ const options = {
     onClose: props => console.log(props.foo),
     autoClose: 6000,
     closeButton: FontAwesomeCloseButton,
-    type: toast.TYPE.INFO,
+    type: 'info',
     hideProgressBar: false,
     position: "top-left",
     pauseOnHover: true,
@@ -87,7 +87,7 @@ toast.isActive(toastId);
 
 // update a toast
 toast.update(toastId, {
-  type: toast.TYPE.INFO,
+  type: type: 'info',
   render: <Img foo={bar}/>
 });
 
