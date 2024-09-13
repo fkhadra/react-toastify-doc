@@ -20,6 +20,11 @@ With yarn:
 yarn add react-toastify
 ```
 
+## Setup
+
+- Add `import 'react-toastify/dist/ReactToastify.css';` on your main page or layout
+- Add `<ToastContainer />` to your application tree
+
 ## The gist
 
 ```jsx
