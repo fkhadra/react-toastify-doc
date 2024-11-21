@@ -15,6 +15,7 @@ When you render a component, a `closeToast` prop and the `toastProps` are inject
 ```jsx
 import React from "react";
 import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Msg = ({ closeToast, toastProps }) => (
   <div>
