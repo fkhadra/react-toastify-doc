@@ -1,0 +1,63 @@
+---
+id: positioning-toast
+title: Positioning toast
+sidebar_label: Positioning toast
+---
+
+import { Embed } from "../src/components/Embed";
+
+By default, all the toasts will be positioned on the top right of your browser. If a position is set on a `toast`, the one defined on ToastContainer will be replaced.
+
+The following values are allowed: **top-right, top-center, top-left, bottom-right, bottom-center, bottom-left**
+
+```tsx
+import { ToastContainer, toast } from 'react-toastify';
+
+export default function App() {
+  const topRight = () => {
+    toast.success('Hey 👋!', {
+      position: 'top-right',
+    });
+  };
+  const topLeft = () => {
+    toast.error('Hey 👋!', {
+      position: 'top-left',
+    });
+  };
+  const topCenter = () => {
+    toast.info('Hey 👋!', {
+      position: 'top-center',
+    });
+  };
+
+  const botRight = () => {
+    toast.dark('Hey 👋!', {
+      position: 'bottom-right',
+    });
+  };
+  const botLeft = () => {
+    toast.warn('Hey 👋!', {
+      position: 'bottom-left',
+    });
+  };
+  const botCenter = () => {
+    toast.info('Hey 👋!', {
+      position: 'bottom-center',
+    });
+  };
+
+  return (
+    <div className="grid h-dvh bg-zinc-900/15 grid-cols-2 place-items-center">
+      <Button onClick={topRight}>Top Right</Button>
+      <Button onClick={topLeft}>Top Left</Button>
+      <Button onClick={topCenter}>Top Center</Button>
+      <Button onClick={botRight}>Bottom Right</Button>
+      <Button onClick={botLeft}>Bottom Left</Button>
+      <Button onClick={botCenter}>Bottom Center</Button>
+      <ToastContainer />
+    </div>
+  );
+}
+```
+
+<Embed url="https://stackblitz.com/edit/react-toastify-positioning-notification" />

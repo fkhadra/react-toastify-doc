@@ -1,7 +1,7 @@
 ---
 id: 'migration-v10'
 title: 'Migrate to v10'
-sidebar_label: '🚀 Migrate to v10'
+sidebar_label: 'Migrate to v10'
 ---
 
 ## What is new in v10

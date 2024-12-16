@@ -1,12 +1,117 @@
 ---
 id: "how-to-style"
 title: "How to style"
-sidebar_label: "How to style"
+sidebar_label: "How to style ✨"
 ---
+
+import { Embed } from "../src/components/Embed";
+
+:::important Important
+Read first [Use your own component](./use-your-own-component) if you haven't
+::: 
+
+## Bring your own component
+
+This is by far the most flexible and the best approach when you need to fully customize the notifications. As you can see, you can accomplish a lot.
+
+![customization FTW](./customization.png)
+
+:::info
+Head to [stackblitz](https://stackblitz.com/edit/react-toastify-how-to-style?file=src%2FApp.tsx) to check the code.
+:::
+
+Let's review together the one with the split buttons for example. I'm using tailwind, but you can write your own css of course.
+
+![split buttons](./split-buttons.png)
+
+```tsx
+import { ToastContainer, ToastContentProps, toast } from 'react-toastify';
+
+export default function App() {
+  const notify = () => {
+    toast(SplitButtons, {
+      closeButton: false,
+      // remove the padding on the toast wrapper
+      // make it 400px width
+      // add a thin purple border because I like purple
+      className: 'p-0 w-[400px] border border-purple-600/40',
+      ariaLabel: 'Email received',
+    });
+  };
+
+  return (
+    <div className="grid place-items-center h-dvh bg-zinc-950/80">
+      <Button onClick={notify}>Notify !</Button>
+      <ToastContainer autoClose={false} />
+    </div>
+  );
+}
+
+
+function SplitButtons({ closeToast }: ToastContentProps) {
+  return (
+    // using a grid with 3 columns 
+    <div className="grid grid-cols-[1fr_1px_80px] w-full">
+      <div className="flex flex-col p-4">
+        <h3 className="text-zinc-800 text-sm font-semibold">Email Received</h3>
+        <p className="text-sm">You received a new email from somebody</p>
+      </div>
+      {/* that's the vertical line which separate the text and the buttons*/}
+      <div className="bg-zinc-900/20 h-full" />
+      <div className="grid grid-rows-[1fr_1px_1fr] h-full">
+        {/*specifying a custom closure reason that can be used with the onClose callback*/}
+        <button onClick={() => closeToast("reply")} className="text-purple-600">
+          Reply
+        </button>
+        <div className="bg-zinc-900/20 w-full" />
+        {/*specifying a custom closure reason that can be used with the onClose callback*/}
+        <button onClick={() => closeToast("ignore")}>Ignore</button>
+      </div>
+    </div>
+  );
+}
+```
+
+## Custom progress bar
+
+When rendering your custom component, the `isPaused` prop is injected. It let you know when you should play or pause your animation for the progress bar.
+
+```tsx
+function App() {
+  const notify = () => {
+    toast(CustomComponent, {
+      autoClose: 8000,
+      // removes the built-in progress bar
+      customProgressBar: true
+    });
+  };
+
+  return (
+    <div>
+      <button onClick={notify}>notify</button>
+      <ToastContainer />
+    </div>
+  );
+}
+
+// isPaused is now available in your component
+// it tells you when to pause the animation: pauseOnHover, pauseOnFocusLoss etc...
+function CustomComponent({ isPaused, closeToast }: ToastContentProps) {
+  return (
+    <div>
+      <span>Hello</span>
+      <MyCustomProgressBar isPaused={isPaused} onAnimationEnd={() => closeToast()} />
+    </div>
+  );
+}
+```
+
+<Embed url="https://stackblitz.com/edit/react-toastify-custom-progress-bar" />
+
 
 ## Override css variables
 
-Below the list of the css variables that are exposed by the library. You can accomplish a lot by overriding some of them.
+Below the list of the css variables that are exposed by the library.
 
 ```css
 :root {
@@ -15,25 +120,33 @@ Below the list of the css variables that are exposed by the library. You can acc
   --toastify-color-info: #3498db;
   --toastify-color-success: #07bc0c;
   --toastify-color-warning: #f1c40f;
-  --toastify-color-error: #e74c3c;
+  --toastify-color-error: hsl(6, 78%, 57%);
   --toastify-color-transparent: rgba(255, 255, 255, 0.7);
-
+  
   --toastify-icon-color-info: var(--toastify-color-info);
   --toastify-icon-color-success: var(--toastify-color-success);
   --toastify-icon-color-warning: var(--toastify-color-warning);
   --toastify-icon-color-error: var(--toastify-color-error);
-
+  
+  --toastify-container-width: fit-content;
   --toastify-toast-width: 320px;
+  --toastify-toast-offset: 16px;
+  --toastify-toast-top: max(var(--toastify-toast-offset), env(safe-area-inset-top));
+  --toastify-toast-right: max(var(--toastify-toast-offset), env(safe-area-inset-right));
+  --toastify-toast-left: max(var(--toastify-toast-offset), env(safe-area-inset-left));
+  --toastify-toast-bottom: max(var(--toastify-toast-offset), env(safe-area-inset-bottom));
   --toastify-toast-background: #fff;
+  --toastify-toast-padding: 14px;
   --toastify-toast-min-height: 64px;
   --toastify-toast-max-height: 800px;
+  --toastify-toast-bd-radius: 6px;
+  --toastify-toast-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   --toastify-font-family: sans-serif;
   --toastify-z-index: 9999;
-
   --toastify-text-color-light: #757575;
   --toastify-text-color-dark: #fff;
 
-  //Used only for colored theme
+  /* Used only for colored theme */
   --toastify-text-color-info: #fff;
   --toastify-text-color-success: #fff;
   --toastify-text-color-warning: #fff;
@@ -41,33 +154,24 @@ Below the list of the css variables that are exposed by the library. You can acc
 
   --toastify-spinner-color: #616161;
   --toastify-spinner-color-empty-area: #e0e0e0;
-
-  // Used when no type is provided
-  // toast("**hello**")
-  --toastify-color-progress-light: linear-gradient(
-    to right,
-    #4cd964,
-    #5ac8fa,
-    #007aff,
-    #34aadc,
-    #5856d6,
-    #ff2d55
-  );
-  // Used when no type is provided
+  --toastify-color-progress-light: linear-gradient(to right, #4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55);
   --toastify-color-progress-dark: #bb86fc;
   --toastify-color-progress-info: var(--toastify-color-info);
   --toastify-color-progress-success: var(--toastify-color-success);
   --toastify-color-progress-warning: var(--toastify-color-warning);
   --toastify-color-progress-error: var(--toastify-color-error);
-
-  // used to control the opacity of the progress trail
-  --toastify-color-progress-bgo: .2;
+  /* used to control the opacity of the progress trail */
+  --toastify-color-progress-bgo: 0.2;
 }
 ```
 
 ## Override existing css classes
 
-If overriding the css variables is not enough for you, you can override the existing CSS classes. Below, a list of the CSS classes used(classes used for animation and media query are omitted)
+If overriding the css variables and using your own component are not enough for you, you can override the existing CSS classes. Below, a list of the CSS classes used.
+
+:::info Info
+Classes used for animation and media query are omitted.
+:::
 
 ```css
 /** Used to define container behavior: width, position: fixed etc... **/
@@ -92,8 +196,6 @@ If overriding the css variables is not enough for you, you can override the exis
 .Toastify__toast {
 }
 .Toastify__toast--rtl {
-}
-.Toastify__toast-body {
 }
 
 /** Used to position the icon **/
@@ -151,39 +253,13 @@ If overriding the css variables is not enough for you, you can override the exis
 }
 ```
 
-## Build your own style using the scss files
-
-Grab the [scss directory](https://github.com/fkhadra/react-toastify/tree/master/scss) of the repository and build your own stylesheet. If you just want to change some colors, most of them are defined inside the `_variables.scss` file.
-
-```
-scss
-├── _closeButton.scss
-├── _progressBar.scss
-├── _toast.scss
-├── _toastContainer.scss
-├── _variables.scss
-├── 📁 animations
-│  ├── _bounce.scss
-│  ├── _flip.scss
-│  ├── _slide.scss
-│  └── _zoom.scss
-├── main.scss
-└── minimal.scss
-```
-
-:::info Info
-You built an amazing theme and you want to share it with the community, please let me know. Contributions are welcome!
-:::
-
 ## Passing css classes to component
 
 The `ToastContainer` accept the following props for styling:
 
 - className: applied to the container
 - toastClassName: applied on the toast wrapper
-- bodyClassName: applied on the toast body
 - progressClassName: applied on the progress bar
-- style: inline style applied to the container
 
 ```jsx
 <ToastContainer className="foo" style={{ width: "2000px" }} />
@@ -192,14 +268,11 @@ The `ToastContainer` accept the following props for styling:
 When displaying a notification you can also set some css classes:
 
 - className: applied on the toast wrapper (this override `toastClassName` is set by the container )
-- bodyClassName: applied on the toast body (this override `bodyClassName` is set by the container )
 - progressClassName: applied on the progress bar (this override `progressClassName` is set by the container )
-- style: inline style applied to the toast
 
 ```jsx
 toast("Custom style", {
   className: "black-background",
-  bodyClassName: "grow-font-size",
   progressClassName: "fancy-progress-bar",
 });
 ```
@@ -227,7 +300,6 @@ const App = () => {
           contextClass[context?.type || "default"] +
           " relative flex p-1 min-h-10 rounded-md justify-between overflow-hidden cursor-pointer"
         }
-        bodyClassName={() => "text-sm font-white font-med block p-3"}
         position="bottom-left"
         autoClose={3000}
       />
@@ -291,62 +363,6 @@ const StyledToastContainer = styled(ToastContainer).attrs({
 `;
 ```
 
-## Styling from scratch
-
-If you want to style from scratch simply include the bare minimum style and you are good to go.
-
-```jsx
-import "react-toastify/dist/ReactToastify.minimal.css";
-```
-
-## Individually stying toasts by ID
-If you don't want a global style with ToastContainer you can try the following. 
-In your custom toast make sure to provide a ToastId
-
-```
-export const MyCustomToast = () => {
-return toast(MyCustomContentDiv, {
-// your custom options
-toastId: MyCustomToastId
-}
-}
-
-// sample that will change the styling just for this toast id in the icon area. This css class is imported in the file where the custom toast is used.
-div#MyCustomToastId .Toastify__toast-icon {
-    width: 60px;
-    background: #00BF91;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-```
-
-## Inject style on demand
-
-If you don't have a css loader or you want to inject the style on demand(convenient with css module), the library provide a helper for that
-
-```js
-import { injectStyle } from "react-toastify/dist/inject-style";
-
-// CALL IT ONCE IN YOUR APP
-injectStyle();
-```
-
-<iframe src="https://codesandbox.io/embed/react-toastify-inject-style-qfg0l?fontsize=14&hidenavigation=1&theme=dark&view=preview"
-     style={
-       {
-            width:"100%",
-            height: "500px",
-            border:0,
-          borderRadius: "4px",
-          overflow:"hidden"
-       }
-     }
-     title="react-toastify-inject-style"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-   ></iframe>
 
 ## Mobile
 

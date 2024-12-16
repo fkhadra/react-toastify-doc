@@ -32,6 +32,7 @@ function Example(){
   );
 }
 ```
+
 ## Remove notification from a given container
 
 - Remove all toasts that belongs to a given container

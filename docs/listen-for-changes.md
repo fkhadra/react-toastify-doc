@@ -7,7 +7,7 @@ sidebar_label: 'Listen for changes'
 If you want to know when a toast is added, updated or removed, `toast` expose a `onChange` method. When called a function to unsubscribe is returned. The callback will receive a `ToastItem`. The item provides a bunch of useful properties `status`, `content`, `id`, `data`, etc...
 
 ```jsx
-// import type { ToastItem } from "react-toastify";
+import type { ToastItem } from "react-toastify";
 
 interface ToastItem<Data = {}> {
     id: Id;
@@ -41,7 +41,7 @@ For example, if I want to log something everytime there is a new error notificat
 
 ```tsx
 toast.onChange(payload => {
-  if(payload.status === "added" && payload.type === toast.TYPE.ERROR) {
+  if(payload.status === "added" && payload.type === "error") {
     logger.error({
       createdAt: Date.now(),
       content: payload.content,

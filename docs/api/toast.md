@@ -13,8 +13,8 @@ sidebar_label: toast
 | Options            | Type              | Description                                                                                         |
 |--------------------|-------------------|-----------------------------------------------------------------------------------------------------|
 | toastId            | string \| number  | Provide a custom id                                                                                 |
-| type               | string            | One of info, success, warning, error                                                                |
-| position           | string            | One of top-right, top-center, top-left, bottom-right, bottom-center, bottom-left                    |
+| type               | string            | One of `info`, `success`, `warning`, `error`                                                                |
+| position           | string            | One of `top-right`, `top-center`, `top-left`, `bottom-right`, `bottom-center`, `bottom-left`                    |
 | onOpen             | function          | Called when the notification appear                                                                 |
 | onClose            | function          | Called when the notification disappear                                                              |
 | autoClose          | bool \| number    | Delay in ms to close the toast. If set to false, the notification needs to be closed manually       |
@@ -25,10 +25,8 @@ sidebar_label: toast
 | pauseOnFocusLoss   | bool              | Pause the timer when the window loses focus                                                         |
 | closeOnClick       | bool              | Dismiss toast on click                                                                              |
 | className          | string            | Add optional classes to the container                                                               |
-| bodyClassName      | string            | Add optional classes to the TransitionGroup container                                               |
 | style              | object            | Add optional inline style to the container                                                          |
 | progressClassName  | string            | Add optional classes to the progress bar                                                            |
-| progressStyle      | object            | Add optional inline style to the progress bar                                                       |
 | draggable          | bool              | Allow toast to be draggable                                                                         |
 | draggablePercent   | number            | The percentage of the toast's width it takes for a drag to dismiss a toast(value between 0 and 100) |
 | draggableDirection | "x" \| "y"        | Specify the drag direction. Default is `x`                                                          |
@@ -46,13 +44,13 @@ sidebar_label: toast
 All the toast methods return a **toastId** except `dismiss` and `isActive`.
 The **toastId** can be used to remove a toast programmatically or to check if the toast is displayed.
 
-```jsx
+```tsx
 const options = {
-    onOpen: props => console.log(props.foo),
-    onClose: props => console.log(props.foo),
+    onOpen: () => console.log("open"),
+    onClose: (reason?: boolean | string) => console.log("closed", reason),
     autoClose: 6000,
     closeButton: FontAwesomeCloseButton,
-    type: toast.TYPE.INFO,
+    type: "info",
     hideProgressBar: false,
     position: "top-left",
     pauseOnHover: true,

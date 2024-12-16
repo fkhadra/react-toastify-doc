@@ -19,3 +19,4 @@ function Example(){
 
   return (<button onClick={notify}>Notify</button>);
 }
+```

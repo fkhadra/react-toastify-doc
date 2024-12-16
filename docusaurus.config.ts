@@ -34,11 +34,6 @@ const config: Config = {
       style: "dark",
       copyright: `Copyright © ${new Date().getFullYear()} Fadi Khadra`,
     },
-    announcementBar: {
-      id: "sponsor", // Any value that will identify this message
-      content:
-        'Hey you like my work? Consider <a target="_blank" rel="noopener noreferrer" href="https://voices.org.ua/en/donat/">helping Ukraine 🇺🇦</a>',
-    },
     algolia: {
       appId: "XKWJI2MIYA",
       apiKey: "d6103ea15850ba5ac898d24750de42b8",

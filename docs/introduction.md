@@ -31,8 +31,8 @@ By default, all toasts will inherit ToastContainer's props. Props defined on toa
 - Beautiful by default
 - Can choose swipe direction
 - Super easy to use an animation of your choice
-- Can display a react component inside the toast!
-- Has ```onOpen``` and ```onClose``` hooks. Both can access the props passed to the react component rendered inside the toast
+- Bring your own component
+- Has ```onOpen``` and ```onClose``` hooks.
 - Can remove a toast programmatically
 - Define behavior per toast
 - Pause toast when the window loses focus 👁
@@ -42,7 +42,7 @@ By default, all toasts will inherit ToastContainer's props. Props defined on toa
 - You can limit the number of toast displayed at the same time
 - Dark mode 🌒
 - Colored theme
-- Promise support
+- Works with Promise
 - And much more !
 
 ## Contribute

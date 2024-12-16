@@ -15,8 +15,6 @@ The `ToastContainer` expose a `limit` prop to meet your needs.
 import React from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 
-import 'react-toastify/dist/ReactToastify.css';
-
 // Display a maximum of 3 notifications at the same time
 function App(){
   const notify = () => {
@@ -39,8 +37,6 @@ You may need to clear the waiting queue in some cases. This is really easy to do
 ```jsx
 import React from 'react';
 import { toast, ToastContainer } from 'react-toastify';
-
-import 'react-toastify/dist/ReactToastify.css';
 
 function App(){
 

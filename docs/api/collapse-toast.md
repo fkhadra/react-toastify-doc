@@ -15,7 +15,3 @@ import { collapseToast } from 'react-toastify';
 
 collapse(node, done);
 ```
-
-:::tip Tips
-This function is useful when you build your own transition with the `Transition` component from react-transition-group.
-:::

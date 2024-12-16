@@ -2,17 +2,31 @@ import React, { useState, useRef, useEffect } from "react";
 import { RadioList } from "./RadioList";
 import { ContainerCode } from "./ContainerCode";
 import { ToastCode } from "./ToastCode";
-import { ToastContainer, toast, Id } from "react-toastify";
-import { injectStyle } from "react-toastify/dist/inject-style";
+import { ToastContainer, toast, Id, ToastContainerProps, Bounce } from "react-toastify";
+// import { injectStyle } from "react-toastify/dist/inject-style";
 import { Options } from "./Options";
 import { Actions } from "./Actions";
 import styled from "styled-components";
 
 import { transitions } from "../utils";
 
+const defaultProps: ToastContainerProps = {
+  position: 'top-right',
+  transition: Bounce,
+  autoClose: 5000,
+  closeButton: true,
+  pauseOnHover: true,
+  pauseOnFocusLoss: true,
+  draggable: 'touch',
+  draggablePercent: 80,
+  draggableDirection: "x",
+  role: 'alert',
+  theme: 'light'
+};
+
 function getDefaultState() {
   return {
-    ...ToastContainer.defaultProps,
+    ...defaultProps,
     transition: "bounce",
     type: "default",
     progress: undefined,
@@ -42,9 +56,6 @@ export function App() {
   const [state, setState] = useState(() => getDefaultState());
   const toastId = useRef<Id>();
 
-  useEffect(() => {
-    injectStyle();
-  }, []);
 
   const isDefaultProps = () => {
     return (
@@ -125,7 +136,7 @@ export function App() {
       <div>
         <h3>Position</h3>
         <RadioList
-          options={toast.POSITION}
+          options={['top-right', "top-left", "top-center", 'bottom-right', "bottom-left", "bottom-center"]}
           name="position"
           checked={state.position}
           onChange={handleInput}
@@ -134,7 +145,7 @@ export function App() {
       <div>
         <h3>Type</h3>
         <RadioList
-          options={toast.TYPE}
+          options={["info", "success", "warning", "error", "default"]}
           name="type"
           checked={state.type}
           onChange={handleInput}

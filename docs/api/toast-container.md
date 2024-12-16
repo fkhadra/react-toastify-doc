@@ -22,9 +22,7 @@ sidebar_label: ToastContainer
 | className            | string            | -         | Add optional classes to the container                                                                       |
 | style                | object            | -         | Add optional inline style to the container                                                                  |
 | toastClassName       | string            | -         | Add optional classes to the toast                                                                           |
-| bodyClassName        | string            | -         | Add optional classes to the toast body                                                                      |
 | progressClassName    | string            | -         | Add optional classes to the progress bar                                                                    |
-| progressStyle        | object            | -         | Add optional inline style to the progress bar                                                               |
 | draggable            | bool              | "touch"   | Allow toast to be draggable                                                                                 |
 | draggablePercent     | number            | 80        | The percentage of the toast's width it takes for a drag to dismiss a toast(value between 0 and 100)         |
 | draggableDirection   | "x" \| "y"        | x         | Specify the drag direction.                                                                                 |
@@ -33,14 +31,3 @@ sidebar_label: ToastContainer
 | role                 | string            | alert     | Define the ARIA role for the toasts                                                                         |
 | theme                | string            | light     | One of light, dark, colored                                                                                 |
 
-## Usage
-
-```jsx
-import { ToastContainer } from 'react-toastify';
-
-<ToastContainer
-  containerId="an id"
-  draggable={false}
-  {/* etc... */}
-/>
-```

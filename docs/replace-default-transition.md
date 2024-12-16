@@ -43,3 +43,7 @@ toast("hello", {
 })
 ```
 
+:::info Info
+If you want to provide your own transition check [Define a custom transition](./custom-animation.mdx).
+:::
+

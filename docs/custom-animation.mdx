@@ -1,10 +1,12 @@
 ---
 id: 'custom-animation'
-title: 'Define a custom enter and exit animation'
-sidebar_label: 'Define a custom enter and exit animation'
+title: 'Define a custom transition'
+sidebar_label: 'Define a custom transition'
 ---
 
-When it comes to animation the possibility are endless and it doesn't need to be complicated! Starting v7, css animations just works out of the box! 
+import { Embed } from "../src/components/Embed";
+
+When it comes to animation the possibility are endless and it doesn't need to be complicated! Starting v7, css animations just works out of the box!
 You can write your own using the power of css or use any css animation library like [animate.css](https://animate.style/) or even copy paste from [animista](https://animista.net/).
 
 All you need to do is to import the `cssTransition` and define your `enter` and `exit` classes.
@@ -21,23 +23,7 @@ const swirl = cssTransition({
 });
 ```
 
-The codesanbox below demonstrate how easy it is.
-
-<iframe src="https://codesandbox.io/embed/react-toastify-animatecss-jxrx9?fontsize=14&hidenavigation=1&theme=dark&view=preview"
-     style={
-       {
-            width:"100%",
-            height: "500px",
-            border:0,
-          borderRadius: "4px",
-          overflow:"hidden"
-       }
-     }
-     title="react-toastify-animate.css"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-   />
-
+<Embed url="https://stackblitz.com/edit/react-toastify-custom-transition" />
 
 
 ### Handle transition based on the toast position
@@ -64,9 +50,7 @@ be appended only to the last one.
 
 By default, the remaining toast will collapse smoothly
 
-<iframe width="100%" height="365" src="https://www.youtube.com/embed/Hui3GZKRDpM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
-
-This can be disabled as well:
+This can be disabled.
 
 ```js
 const Zoom = cssTransition({

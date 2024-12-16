@@ -4,6 +4,8 @@ title: Icons
 sidebar_label: Icons
 ---
 
+import { Embed } from "../src/components/Embed";
+
 ## Built-in icons
 
 Notifications of different types (`toast.info`, `toast.error`, `toast.success`, `toast.warning`) display an icon associated with the selected type.
@@ -25,16 +27,60 @@ toast.warn("Lorem ipsum dolor", {
 })
 ```
 
+## Replace default icons
+
+You can provide a function to the `icon` prop of the `ToastContainer` to replace the built-in icons.
+
+```tsx
+import { ToastContainer, toast } from 'react-toastify';
+import { BadgeCheck, CircleAlert, Info, TriangleAlert } from 'lucide-react';
+
+export default function App() {
+  const notify = () => {
+    toast.info('Wow so easy !');
+    toast.error('Wow so easy !');
+    toast.success('Wow so easy !');
+    toast.warning('Wow so easy !');
+  };
+
+  return (
+    <div className="grid place-items-center h-dvh bg-zinc-900/15">
+      <Button onClick={notify}>Notify !</Button>
+      <ToastContainer
+        icon={({ type, theme }) => {
+          // theme is not used in this example but you could
+          switch (type) {
+            case 'info':
+              return <Info className="stroke-indigo-400" />;
+            case 'error':
+              return <CircleAlert className="stroke-red-500" />;
+            case 'success':
+              return <BadgeCheck className="stroke-green-500" />;
+            case 'warning':
+              return <TriangleAlert className="stroke-yellow-500" />;
+            default:
+              return null;
+          }
+        }}
+      />
+    </div>
+  );
+}
+```
+
+<Embed url="https://stackblitz.com/edit/react-toastify-change-icons" />
+
+
 ## Disable icons
 
-- Disable the icon individually
+- Disable the icon per toast
 ```tsx
 toast.error("Without icon", {
   icon: false
 });
 ```
 
-- Disable the icon gloabally
+- Disable the icon globally
 ```tsx
 <ToastContainer icon={false} />
 ```
@@ -59,5 +105,6 @@ toast.success("Even a function, given you return something that can be rendered"
 });
 ```
 
-:::info If you provide a component, the current `theme` and `type` are passed as props
+:::info Info
+If you provide a component, the current `theme` and `type` are passed as props
 :::

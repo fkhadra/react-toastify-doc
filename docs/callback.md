@@ -1,7 +1,7 @@
 ---
 id: 'define-callback'
-title: 'Define callback'
-sidebar_label: 'Define callback'
+title: 'Callbacks and closure reason'
+sidebar_label: 'Callbacks and closure reason ✨'
 ---
 
 You can define two callbacks. Their names are self-explanatory:
@@ -9,7 +9,7 @@ You can define two callbacks. Their names are self-explanatory:
 - `onOpen`
 - `onClose`
 
-```jsx
+```tsx
 import { toast } from 'react-toastify';
 
 function Example(){
@@ -17,7 +17,7 @@ function Example(){
   const notify = () => {
     toast("Hello there", {
       onOpen: () => window.alert('Called when I open'),
-      onClose: () => window.alert('Called when I close')
+      onClose: (reason?: boolean | string) => window.alert('Called when I close')
     });
   }
 
@@ -25,26 +25,50 @@ function Example(){
 }
 ```
 
-:::tip Tip
-  If you use a component, the callback will also have access to the component props
+Additionally `onClose` receives a closure reason as the first argument. When the user closes the notification, the `reason` argument is equal to `true`. 
 
-```jsx
-import { toast } from 'react-toastify';
+In the example below, I've named my argument
+`removedByUser` to make the intent clear.
 
-function Msg({ uid }){
-  return <span>{uid}</span>;
-}
+```tsx
+toast("hello", {
+  onClose(removedByUser){
+    if(removedByUser) {
+      // do something
+      return
+    }
 
-function Example(){
-
-  const notify = () => {
-    toast(<Msg uid={"this is a uid for real"} />, {
-      onOpen: ({ uid }) => window.alert(uid),
-      onClose: ({ uid }) => window.alert(uid)
-    });
+    // auto close do something else
   }
-
-  return <button onClick={notify}>Notify</button>;
-}
+})
 ```
-:::
+
+If you are using a custom component for your notification, you might want more control over the reason, especially if it contains
+multiple call to actions. `closeToast` let you specify a closure reason of your choice.
+
+```tsx
+import { ToastContentProps } from "react-toastify";
+
+function CustomNotification({ closeToast }: ToastContentProps) {
+  return ( 
+    <div>
+      You received a new message
+      <button onClick={() => closeToast("reply")}>Reply</button>
+      <button onClick={() => closeToast("ignore")}>Ignore</button>
+    </div>
+  )
+}
+
+toast(CustomNotification, {
+  onClose(reason){
+    switch (reason) {
+      case "reply":
+        // navigate to reply page for example or open a dialog
+      case "ignore":
+        // tell the other user that she/he was ghosted xD
+      default:
+        // 🤷‍♂️
+    }
+  }
+})
+```

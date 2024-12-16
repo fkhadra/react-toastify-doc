@@ -1,0 +1,57 @@
+---
+id: installation
+title: Installation
+sidebar_label: Installation
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import {Embed} from "../src/components/Embed";
+
+## Requirements
+
+- [React](https://reactjs.org) version >= 18 or above
+
+## Installation
+
+<Tabs>
+    <TabItem value="npm" label="npm" default>
+        ```sh
+        npm i --save react-toastify
+        ```
+    </TabItem>
+    <TabItem value="pnpm" label="pnpm">
+        ```sh
+        pnpm i react-toastify
+        ```
+    </TabItem>
+    <TabItem value="yarn" label="yarn">
+        ```sh
+        yarn add react-toastify
+        ```
+    </TabItem>
+</Tabs>
+
+## The gist
+
+```tsx
+import { ToastContainer, toast } from 'react-toastify';
+
+export default function App() {
+  const notify = () => toast('Wow so easy !');
+
+  return (
+    <div className="grid place-items-center h-dvh bg-zinc-900/15">
+      <Button onClick={notify}>Notify !</Button>
+      <ToastContainer />
+    </div>
+  );
+}
+```
+
+<Embed url="https://stackblitz.com/edit/react-toastify-getting-started"/>
+
+:::important Important
+Remember to render the `ToastContainer` *once* in your application tree. 
+If you can't figure out where to put it, rendering it in the application root would be the best bet.
+:::

@@ -18,7 +18,7 @@ function Example() {
 
   const notify = () => toastId.current = toast("Hello", { autoClose: false });
 
-  const update = () => toast.update(toastId.current, { type: toast.TYPE.INFO, autoClose: 5000 });
+  const update = () => toast.update(toastId.current, { type: "info", autoClose: 5000 });
 
   return (
     <div>
@@ -37,40 +37,40 @@ If you want to change the content it's straightforward as well. You can render a
  // With a string
  toast.update(toastId, {
     render: "New content",
-    type: toast.TYPE.INFO,
+    type: "info",
     autoClose: 5000
   });
 
 // Or with a component
 toast.update(toastId, {
-    render: MyComponent
-    type: toast.TYPE.INFO,
+    render: MyComponent,
+    type: "info",
     autoClose: 5000
 });
 
 toast.update(toastId, {
-    render: () => <div>New content</div>
-    type: toast.TYPE.INFO,
+    render: () => <div>New content</div>,
+    type: "info",
     autoClose: 5000
 });
 ```
 
 ## Update the toast id
 
-If you want to update the `toastId` it can be done. But don't forget to use the new id if you want to update your toast again 😅!
+If you want to update the `toastId` it can be done. But don't forget to use the new id if you want to update your notification again 😅!
 
 ```jsx
 const myNewToastId = 'loremIpsum';
 
 toast.update(toastId, {
   render: "New content",
-  type: toast.TYPE.INFO,
+  type: "info",
   autoClose: 5000,
   toastId: myNewToastId
 });
 
 toast.update(myNewToastId, {
-  render: MyComponent
+  render: MyComponent,
   autoClose: 6000
 }); 
 ```
@@ -85,7 +85,7 @@ By default, when you update a toast, there is no transition applied. If you want
 // with css
 toast.update(toastId, {
   render: "New Content",
-  type: toast.TYPE.INFO,
+  type: "info",
   //Here the magic
   className: 'rotateY animated'
 })
@@ -93,7 +93,7 @@ toast.update(toastId, {
 // with transition
 toast.update(toastId, {
   render: "New Content",
-  type: toast.TYPE.INFO,
+  type: "info",
   //Here the magic
   transition: Rotate
 })
@@ -102,7 +102,7 @@ toast.update(toastId, {
 ## Reset option or inherit from ToastContainer
 
 If you want to inherit props from the `ToastContainer`, you can reset an option by passing null.
-It's particularly useful when you remove the `closeButton` from a toast and you want it back during the update.
+It's particularly useful when you remove the `closeButton` from a toast, and you want it back during the update.
 
 ```jsx
 function Example(){
@@ -117,7 +117,7 @@ function Example(){
 
   const update = () => {
     toast.update(toastId.current, {
-      type: toast.TYPE.INFO,
+      type: "info",
       autoClose: 5000,
       closeButton: null // The closeButton defined on ToastContainer will be used
     });
@@ -131,39 +131,3 @@ function Example(){
   );
 }
 ```
-
-# Updating a Toast with your custom options Example
-```const failedOptions = {
-  position: "bottom-left",
-  autoClose: 5000,
-  closeButton: true,
-  hideProgressBar: false,
-  closeOnClick: false,
-  pauseOnHover: true,
-  draggable: false,
-  progress: undefined,
-  theme: "light",
-  toastId: 'ToastFailed',
-  icon: <Icon
-    size="lg"
-    color='white'
-    icon={<AlertIcon />}
-  />,
-  style: {
-    width: 500,
-    border: `2px solid ${COLORS.red}`
-  },
-}
-
-const FailedMessage = () => (
-  <div>
-    your message and html here
-  </div>
-)
-    setTimeout(() => {
-      toast.update(toastId.current, {
-        render: FailedMessage,
-        ...failedOptions
-      })
-    }, 3000);
-    ```

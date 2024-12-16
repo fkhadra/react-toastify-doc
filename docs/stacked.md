@@ -1,7 +1,7 @@
 ---
 id: 'stacked'
 title: 'Stacked Notifications'
-sidebar_label: 'Stacked Notifications (v10)'
+sidebar_label: 'Stacked Notifications'
 ---
 
 To enable it, add the `stacked` prop to the `ToastContainer`. I also suggest to disable the progress bar :).

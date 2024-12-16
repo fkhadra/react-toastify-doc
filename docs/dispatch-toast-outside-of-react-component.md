@@ -20,7 +20,6 @@ import App from 'src/components/App';
 import { toast } from "react-toastify";
 import registerServiceWorker from './registerServiceWorker';
 
-import 'react-toastify/dist/ReactToastify.css';
 import './index.css';
 
 
