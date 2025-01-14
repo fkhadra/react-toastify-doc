@@ -32,6 +32,7 @@ function getDefaultState() {
     progress: undefined,
     disableAutoClose: false,
     limit: 0,
+    stacked: false,
   };
 }
 
@@ -139,6 +140,15 @@ export function App() {
           options={['top-right', "top-left", "top-center", 'bottom-right', "bottom-left", "bottom-center"]}
           name="position"
           checked={state.position}
+          onChange={handleInput}
+        />
+      </div>
+      <div>
+        <h3>Stacked</h3>
+        <RadioList
+          options={["true", "false"]}
+          name="stacked"
+          checked={state.stacked ? "true" : "false"}
           onChange={handleInput}
         />
       </div>
