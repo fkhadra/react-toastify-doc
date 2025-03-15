@@ -24,7 +24,7 @@ By default, all toasts will inherit ToastContainer's props. Props defined on toa
 
 ## Make it yours
 
-Super easy to customize, it can blend into any design system. Check the [How to style](./how-to-style) guide for more details.
+Super easy to customize, it can blend into any design system. Check the [How to style](/how-to-style) guide for more details.
 
 ![style](./customization.png)
 
