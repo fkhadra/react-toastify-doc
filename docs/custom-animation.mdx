@@ -1,7 +1,7 @@
 ---
 id: 'custom-animation'
 title: 'Define a custom transition'
-sidebar_label: 'Define a custom transition'
+sidebar_label: 'Define a custom transition or remove transition'
 ---
 
 import { Embed } from "../src/components/Embed";
@@ -71,3 +71,38 @@ const Zoom = cssTransition({
   exit: 'zoomOut', 
 });
 ```
+
+### Disable transition
+
+If you want to disable the transitions, the trick is to use an empty keyframe.
+
+```css
+@keyframes noop {}
+
+.noop{
+  animation: noop 0s;
+}
+```
+
+:::important Important
+  Using `animation: none` won't work.
+:::
+
+
+```tsx
+import {cssTransition} from "react-toastify"
+
+// create the transition
+const Disabled = cssTransition({
+  enter: "noop",
+  exit: "noop",
+  collapse: false
+});
+
+// pass it to your container
+<ToastContainer transition={Disabled} />
+```
+
+
+
+
