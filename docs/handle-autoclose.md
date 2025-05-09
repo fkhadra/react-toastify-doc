@@ -23,14 +23,12 @@ const App = () => (
 import { ToastContainer, toast } from 'react-toastify';
 
 function Example() {
-  const closeAfter15 = () => toast("Will close after 15s", { autoClose: 15000 });
-
-  const closeAfter7 = () => toast("Will close after 7s", { autoClose: 7000 });
+  const closeAfter = (duration) => toast(`Will close after ${duration}s`, { autoClose: duration });
 
   return (
     <div>
-      <button onClick={closeAfter15}>Close after 15 seconds</button>
-      <button onClick={closeAfter7}>Close after 7 seconds</button>
+      <button onClick={() => closeAfter(15)}>Close after 15 seconds</button>
+      <button onClick={() => closeAfter(7)}>Close after 7 seconds</button>
       <ToastContainer autoClose={8000} />
     </div>
   );
