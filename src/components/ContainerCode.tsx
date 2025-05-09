@@ -37,6 +37,7 @@ export const ContainerCode: React.FC<ContainerCodeProps> = ({
   limit,
   theme = "light",
   transition,
+  stacked = false,
 }) => {
   return(
   <div>
@@ -49,6 +50,10 @@ export const ContainerCode: React.FC<ContainerCodeProps> = ({
       <div>
         <Element kind={1}>position</Element>
         {`="${position}"`}
+      </div>
+      <div>
+        <Element kind={1}>stacked</Element>
+        {`="${stacked}"`}
       </div>
       <div>
         <Element kind={1}>autoClose</Element>
