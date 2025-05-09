@@ -64,7 +64,7 @@ toast.dismiss({ container: "123" })
 toast.dismiss({ id: "123", containerId: "12" })
 ```
 
-The method is backward compatible. `toast.dismis()` and `toast.dismiss("123")` work as usual. 
+The method is backward compatible. `toast.dismiss()` and `toast.dismiss("123")` work as usual. 
 
 ### Check if a notification is active for a given container
 
