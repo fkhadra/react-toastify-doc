@@ -149,7 +149,7 @@ All you want is to change the color of the progress bar? No problem
 }
 ```
 
-You can find the list of all exposed variables [here](./how-to-style#override-css-variables)
+You can find the list of all exposed variables [here](/react-toastify/how-to-style#override-css-variables)
 
 ## Breaking changes
 
